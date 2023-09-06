@@ -1,0 +1,61 @@
+.card{
+    width: 45vmin;
+    height: 35vmin;
+    position: relative;
+    margin: 5% 2%;
+    /* background: #000917 !important;  */
+    background: #00FFED !important; 
+    clip-path: polygon(
+        0% 0%,
+        80% 0%, 
+        100% 20%, 
+        100% 100%, 
+        20% 100%,
+        0% 80%
+    );
+}
+
+.card_top{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: #000917; 
+    clip-path: polygon(
+        0% 0%,
+        80% 0%, 
+        100% 20%, 
+        100% 100%, 
+        20% 100%,
+        0% 80%
+    );
+}
+
+.card_heading{
+    width: 70%;
+    margin: auto;
+    padding: 5%;
+    font-family: 'Chakra Petch';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 150%;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #00FFED; 
+}
+
+.card_summary{
+    font-family: 'Chakra Petch';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #FFFFFF;
+    padding: 5% 12%;
+    display: flex;
+    text-align: justify;
+
+}

@@ -1,0 +1,15 @@
+.SITE-logo{
+    margin: 5% 0%;
+    display: flex;
+    justify-content: center;
+}
+
+.other-logos{
+    display: flex;
+    justify-content: space-around;
+    margin: 7% 0%;
+}
+
+.body{
+    width: 90%;
+}

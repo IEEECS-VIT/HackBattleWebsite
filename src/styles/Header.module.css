@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: transparent;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .link {
+    margin-right: 1rem;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .activeLink {
+    color: blue;
+  }
+  
+  .right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .button {
+    padding: 0.5rem 1rem;
+    background-color: lightblue;
+    color: #000;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  

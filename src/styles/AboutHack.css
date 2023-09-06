@@ -1,0 +1,25 @@
+.ab-hack-svg {
+    margin: auto;
+    margin-top: 60px;
+}
+
+.no-path {
+    opacity: 0;
+} 
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 7s linear forwards;
+}
+  
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.AboutHack {
+    margin:auto;
+    margin-top: -800px;
+    margin-left: 5vw;
+}

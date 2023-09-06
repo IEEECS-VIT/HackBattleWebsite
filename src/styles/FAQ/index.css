@@ -1,0 +1,12 @@
+.body{
+    width: 90%;
+    margin: auto;
+}
+
+.faq_div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5%;
+}
+
