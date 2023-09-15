@@ -28,3 +28,4 @@ export default function Card({ question, answer }) {
     </div>
   );
 }
+

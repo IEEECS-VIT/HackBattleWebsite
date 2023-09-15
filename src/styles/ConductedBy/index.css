@@ -8,8 +8,21 @@
     display: flex;
     justify-content: space-around;
     margin: 7% 0%;
+    
 }
 
 .body{
     width: 90%;
+}
+
+.Azadi-logo-inner{
+    width: 400px;
+}
+.IIC-logo-inner{
+    margin-top: 70px;
+    width: 600px;
+}
+.G20-logo-inner{
+    margin-left: 110px;
+    width: 400px;
 }
