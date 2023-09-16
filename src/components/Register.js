@@ -27,50 +27,50 @@ const Register = () => {
     const [leaderRegNo, setLeaderRegNo] = useState('');
     const [leaderPhoneNo, setLeaderPhoneNo] = useState('');
 
-    const leaderFirstNameHandler = (e) =>{
+    const leaderFirstNameHandler = (e) => {
         setLeaderFirstName(e.target.value);
     }
-    const leaderLastNameHandler = (e) =>{
+    const leaderLastNameHandler = (e) => {
         setLeaderLastName(e.target.value);
     }
-    const teamNameHandler = (e) =>{
+    const teamNameHandler = (e) => {
         setTeamName(e.target.value);
     }
-    const leaderEmailHandler = (e) =>{
+    const leaderEmailHandler = (e) => {
         setLeaderEmail(e.target.value);
     }
-    const leaderGithubHandler = (e) =>{
+    const leaderGithubHandler = (e) => {
         setLeaderGithub(e.target.value);
     }
-    const leaderRegNoHandler = (e) =>{
+    const leaderRegNoHandler = (e) => {
         setLeaderRegNo(e.target.value);
     }
-    const leaderPhoneNoHandler = (e) =>{
+    const leaderPhoneNoHandler = (e) => {
         setLeaderPhoneNo(e.target.value);
     }
 
     const leaderSubmitHandler = () => {
         Axios.post('http://localhost:3000/team_leader', {
-        name: leaderFirstName + ' ' + leaderLastName,
-        teamName: teamName,
-        email: leaderEmail,
-        git_link: leaderGithub,
-        phone_num: leaderPhoneNo,
-        reg_num: leaderRegNo
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-      setLeaderFirstName('');
-      setLeaderLastName('');
-      setTeamName('');
-      setLeaderEmail('');
-      setLeaderGithub('');
-      setLeaderPhoneNo('');
-      setLeaderRegNo(''); 
+            name: leaderFirstName + ' ' + leaderLastName,
+            teamName: teamName,
+            email: leaderEmail,
+            git_link: leaderGithub,
+            phone_num: leaderPhoneNo,
+            reg_num: leaderRegNo
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        setLeaderFirstName('');
+        setLeaderLastName('');
+        setTeamName('');
+        setLeaderEmail('');
+        setLeaderGithub('');
+        setLeaderPhoneNo('');
+        setLeaderRegNo('');
     }
 
     //Team Member Details Handler
@@ -82,151 +82,151 @@ const Register = () => {
     const [memberPhoneNo, setMemberPhoneNo] = useState('');
     const [refCode, setRefCode] = useState('');
 
-    const memberFirstNameHandler = (e) =>{
+    const memberFirstNameHandler = (e) => {
         setMemberFirstName(e.target.value);
     }
-    const memberLastNameHandler = (e) =>{
+    const memberLastNameHandler = (e) => {
         setMemberLastName(e.target.value);
     }
-    const memberEmailHandler = (e) =>{
+    const memberEmailHandler = (e) => {
         setMemberEmail(e.target.value);
     }
-    const memberGithubHandler = (e) =>{
+    const memberGithubHandler = (e) => {
         setMemberGithub(e.target.value);
     }
-    const memberRegNoHandler = (e) =>{
+    const memberRegNoHandler = (e) => {
         setMemberRegNo(e.target.value);
     }
-    const MemberPhoneNoHandler = (e) =>{
+    const MemberPhoneNoHandler = (e) => {
         setMemberPhoneNo(e.target.value);
     }
-    const refCodeHandler = (e) =>{
+    const refCodeHandler = (e) => {
         setRefCode(e.target.value);
     }
 
     const memberSubmitHandler = () => {
         Axios.post('http://localhost:3000/team_member', {
-        name: memberFirstName + ' ' + memberLastName,
-        email: memberEmail,
-        git_link: memberGithub,
-        phone_num: memberPhoneNo,
-        Reg_num: memberRegNo,
-        referenceNumber: refCode
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-      setMemberFirstName('');
-      setMemberLastName('');
-      setMemberEmail('');
-      setMemberGithub('');
-      setMemberRegNo('');
-      setMemberPhoneNo('');
-      setRefCode('');
+            name: memberFirstName + ' ' + memberLastName,
+            email: memberEmail,
+            git_link: memberGithub,
+            phone_num: memberPhoneNo,
+            Reg_num: memberRegNo,
+            referenceNumber: refCode
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        setMemberFirstName('');
+        setMemberLastName('');
+        setMemberEmail('');
+        setMemberGithub('');
+        setMemberRegNo('');
+        setMemberPhoneNo('');
+        setRefCode('');
     }
 
 
     return (
         <>
-            <nav className='flex items-center justify-between flex-wrap bg-transparent-500 pr-8 pl-8 py-4 border-neoBlue border-neoBlue-400 border-b-2 z-10'>
-                <div className='block lg:hidden'>
-                    <button className='flex items-center px-3 py-2 border rounded text-white-200 hover:text-neoBlue'>
+            <nav className="flex items-center justify-between flex-wrap bg-transparent-500 pr-8 pl-8 py-4 border-neoBlue border-neoBlue-400 border-b-2  z-10" style={{ fontFamily: "Chakra Petch" }}>
+                <div className="block lg:hidden">
+                    <button className="flex items-center px-3 py-2 border rounded text-white-200 hover:text-neoBlue">
                         <svg
-                            className='fill-current h-3 w-3'
-                            viewBox='0 0 20 20'
-                            xmlns='http://www.w3.org/2000/svg'
+                            className="fill-current h-3 w-3"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
                         >
                             <title>Menu</title>
-                            <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z' />
+                            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
                         </svg>
                     </button>
                 </div>
-                <div className='w-full block flex-grow lg:flex justify-between lg:items-center lg:w-auto'>
-                    <div className='text-md flex w-1/2 justify-around pl-8 pr-6'>
-                        <div className='inline-flex'>
+                <div className="w-full block flex-grow lg:flex justify-between lg:items-center lg:w-auto">
+                    <div className="text-md flex w-1/2 justify-around pl-8 pr-6">
+                        <div className="inline-flex">
                             <Link
-                                to='/'
+                                to="/"
                                 smooth={true}
                                 duration={500}
-                                className={`${activeLink === 'home'
-                                    ? 'border-neoBlue border-b-2 border-neoBlue-500 text-neoBlue text-neoBlue-900'
-                                    : ' text-white text-white-500'
-                                    } cursor-pointer items-center px-1 pt-1 text-sm font-medium block mt-4 lg:inline-block lg:mt-0 mr-4`}
-                                onClick={() => handleLinkClick('home')}
+                                className={`${activeLink === "home"
+                                        ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                                        : " text-white text-white-500"
+                                    } cursor-pointer items-center px-1 pt-1 text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
+                                onClick={() => handleLinkClick("home")}
                             >
                                 Home
                             </Link>
                         </div>
-                        <div className='inline-flex'>
+                        <div className="inline-flex">
                             <Link
-                                to='/'
+                                to="tracks"
                                 smooth={true}
                                 duration={500}
-                                className={`${activeLink === 'tracks'
-                                    ? 'border-neoBlue border-b-2 border-neoBlue-500 text-neoBlue text-neoBlue-900'
-                                    : ' text-white text-white-500'
-                                    } cursor-pointer items-center px-1 pt-1  text-sm font-medium block mt-4 lg:inline-block lg:mt-0 mr-4`}
-                                onClick={() => handleLinkClick('tracks')}
+                                className={`${activeLink === "tracks"
+                                        ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                                        : " text-white text-white-500"
+                                    } cursor-pointer items-center px-1 pt-1  text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
+                                onClick={() => handleLinkClick("tracks")}
                             >
                                 Tracks
                             </Link>
                         </div>
-                        <div className='inline-flex'>
+                        <div className="inline-flex">
                             <Link
-                                to='/'
+                                to="prizes"
                                 smooth={true}
                                 duration={500}
-                                className={`${activeLink === 'prizes'
-                                    ? 'border-neoBlue border-b-2 border-neoBlue-500 text-neoBlue text-neoBlue-900'
-                                    : ' text-white text-white-500'
-                                    } cursor-pointer items-center px-1 pt-1  text-sm font-medium block mt-4 lg:inline-block lg:mt-0 mr-4`}
-                                onClick={() => handleLinkClick('prizes')}
+                                className={`${activeLink === "prizes"
+                                        ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                                        : " text-white text-white-500"
+                                    } cursor-pointer items-center px-1 pt-1  text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
+                                onClick={() => handleLinkClick("prizes")}
                             >
                                 Prizes
                             </Link>
                         </div>
-                        <div className='inline-flex'>
+                        <div className="inline-flex">
                             <Link
-                                to='/'
+                                to="abouthack"
                                 smooth={true}
                                 duration={500}
-                                className={`${activeLink === 'aboutus'
-                                    ? 'border-neoBlue border-b-2 border-neoBlue-500 text-neoBlue text-neoBlue-900'
-                                    : ' text-white text-white-500'
-                                    } cursor-pointer items-center px-1 pt-1  text-sm font-medium block mt-4 lg:inline-block lg:mt-0 mr-4`}
-                                onClick={() => handleLinkClick('abouthack')}
+                                className={`${activeLink === "abouthack"
+                                        ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                                        : " text-white text-white-500"
+                                    } cursor-pointer items-center px-1 pt-1  text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
+                                onClick={() => handleLinkClick("abouthack")}
                             >
                                 About Hack
                             </Link>
                         </div>
-                        <div className='inline-flex'>
+                        <div className="inline-flex">
                             <Link
-                                to='/'
+                                to="faq"
                                 smooth={true}
                                 duration={500}
-                                className={`${activeLink === 'faq'
-                                    ? 'border-neoBlue border-b-2 border-neoBlue-500 text-neoBlue text-neoBlue-900'
-                                    : ' text-white text-white-500'
-                                    } cursor-pointer items-center px-1 pt-1 text-sm font-medium block mt-4 lg:inline-block lg:mt-0 mr-4`}
-                                onClick={() => handleLinkClick('faq')}
+                                className={`${activeLink === "faq"
+                                        ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                                        : " text-white text-white-500"
+                                    } cursor-pointer items-center px-1 pt-1 text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
+                                onClick={() => handleLinkClick("faq")}
                             >
                                 FAQ
                             </Link>
                         </div>
                     </div>
-                    <div className='flex-basis-1/2 mr-8'>
+                    <div className="flex-basis-1/2 mr-8">
                         <a
                             href='/register'
                             style={{
                                 clipPath:
-                                    'polygon(0 0, 100% 0, 100% 20%, 97% 30%,97% 70%,100% 80%, 100% 100%, 5% 100%,0% 80%)',
+                                    "polygon(0 0, 100% 0, 100% 20%, 97% 30%,97% 70%,100% 80%, 100% 100%, 5% 100%,0% 80%)",
                             }}
-                            className='inline-block text-sm px-4 py-2 leading-none border text-darkBlue bg-neoBlue mt-2 lg:mt-0'
+                            className="inline-block text-xl px-4 py-2 leading-none border text-darkBlue bg-neoBlue mt-2 lg:mt-0 font-bold"
                         >
-                            Register Now
+                            Register Now!
                         </a>
                     </div>
                 </div>
