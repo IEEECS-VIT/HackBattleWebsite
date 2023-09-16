@@ -76,7 +76,7 @@ const AboutHack = () => {
               style={{ clipPath: 'polygon(5% 0,100% 0,90% 100%,0 100%)' }}
               className='top-0 left-0 w-1/3 bg-neoBlue text-darkBlue items-center justify-center flex font-chakra font-extrabold text-xl'
             >
-              About Hack-a-delic
+              About HackBattle
             </div>
             <div
               style={{
@@ -85,21 +85,8 @@ const AboutHack = () => {
               }}
               className='p-4 inline-block text-white font-medium font-chakra text-base'
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eos
-              repellat autem quis. Nisi deserunt pariatur, commodi
-              necessi-tatibus mollitia et! Quidem totam hic molestiae maxime
-              saepe dolore doloribus, magnam laboriosam, repellat, temporibus
-              iste illo eligendi? Dolore illo beatae quod reiciendis vero totam
-              odio nobis perferendis impedit. Quo blanditiis illo ab reiciendis
-              praesentium corrupti, ipsum labore eaque minus nemo dignissimos
-              fugit. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Sint quidem doloremque perspiciatis rerum dignissimos officia et
-              sapiente eos nostrum? Sit provident modi magnam fuga delectus
-              praesentium, reiciendis, molestias aliquid unde maiores velit
-              quibusdam cupiditate repellat ratione doloribus ad cumque maxime
-              iste ducimus? Id beatae sequi ratione a ut, numquam placeat obc
-              aecati quam consectetur laborum debitis sapiente tenetur suscipit
-              blanditiis aut.
+              HackBattle is an exhilarating 36-hour event hosted annually by IEEE Computer Society - VIT, drawing participants from far and wide. Fueled by passion and endless coffee, teams immerse themselves in crafting creative solutions to intricate challenges. The battlefield mirrors real-world complexities, urging participants to utilize cutting-edge technologies like Machine Learning, Cloud Computing, Blockchain, IoT, AR/VR, and more to tackle thought-provoking problem statements.
+Living up to its name, HackBattle becomes the epic battleground where modern-day technological warriors emerge and fresh innovations take flight within an accelerated time frame. It also holds in-store keynote sessions along with fun and engaging activities. With the spirit of creativity and teamwork, the ultimate battle of minds commences, fostering an atmosphere of friendly competition and collaboration.
             </div>
           </div>
         </div>

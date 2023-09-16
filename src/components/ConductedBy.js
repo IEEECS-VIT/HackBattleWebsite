@@ -1,9 +1,13 @@
 import React, {useRef} from "react";
 import Heading from "./Heading";
 import SITELogo from "../assets/logos/SITE.png";
-import G20Logo from "../assets/logos/G20.png";
-import IICLogo from "../assets/logos/IIC.png";
-import AzadiLogo from "../assets/logos/Azadi.png";
+// import G20Logo from "../assets/logos/G20.png";
+// import IICLogo from "../assets/logos/IIC.png";
+// import AzadiLogo from "../assets/logos/Azadi.png";
+import echo3D from "../assets/logos/echo3D.png";
+import LavieSports from "../assets/logos/LavieSport.png";
+import Wolfram from "../assets/logos/Wolfram.png";
+import axure from "../assets/logos/Axure.png";
 import "../styles/ConductedBy/index.css";
 import Subheading from "./ConductedBy/subheading";
 import "../styles/ConductedBy.css";
@@ -57,13 +61,16 @@ export default function ConductedBy() {
       <Subheading />
       <div className="other-logos">
         <div className="G20-logo">
-          <img className="G20-logo-inner" src={G20Logo} alt="SITE Logo" />
+          <img className="G20-logo-inner" src={echo3D} alt="echo3D Logo" />
         </div>
-        <div className="IIC-logo">
-          <img className="IIC-logo-inner" src={IICLogo} alt="SITE Logo" />
+        <div className="IIC-logo mt-10">
+          <img className="IIC-logo-inner" src={LavieSports} alt="LavieSports Logo" />
         </div>
         <div className="Azadi-logo">
-          <img className="Azadi-logo-inner" src={AzadiLogo} alt="SITE Logo" />
+          <img className="Azadi-logo-inner" src={Wolfram} alt="Wolfram Logo" />
+        </div>
+        <div className="axure-logo mt-10">
+          <img className="axure-logo-inner" src={axure} alt="Azure Logo" />
         </div>
       </div>
     </div>
