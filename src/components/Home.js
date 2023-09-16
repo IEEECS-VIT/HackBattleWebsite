@@ -11,7 +11,7 @@ const Home = () => {
   };
   return (
     <div>
-      <nav className='flex items-center justify-between flex-wrap bg-transparent-500 pr-8 pl-8 pt-4 border-neoBlue border-neoBlue-400 border-b-2 z-10'>
+      <nav className='flex items-center justify-between flex-wrap bg-transparent-500 pr-8 pl-8 py-4 border-neoBlue border-neoBlue-400 border-b-2 z-10'>
         <div className='block lg:hidden'>
           <button className='flex items-center px-3 py-2 border rounded text-white-200 hover:text-neoBlue'>
             <svg
@@ -104,7 +104,7 @@ const Home = () => {
           </div>
           <div className='flex-basis-1/2 mr-8'>
             <a
-              href='https://google.com'
+              href='/register'
               style={{
                 clipPath:
                   'polygon(0 0, 100% 0, 100% 20%, 97% 30%,97% 70%,100% 80%, 100% 100%, 5% 100%,0% 80%)',
