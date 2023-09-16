@@ -6,12 +6,14 @@ import Tracks from './components/Tracks';
 import FAQ from './components/FAQ';
 import AboutHack from './components/AboutHack';
 import ConductedBy from './components/ConductedBy';
+import Layout from './components/Layout';
 import Register from './components/Register';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <>
+      <Layout>
       <Routes>
         <Route path='/' element={
           <>
@@ -32,6 +34,7 @@ function App() {
         <div className='stars'></div>
         <div className='stars'></div>
       </div>
+      </Layout>
     </>
   );
 }
