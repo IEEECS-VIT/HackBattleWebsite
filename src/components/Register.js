@@ -162,7 +162,7 @@ const Register = () => {
                         </div>
                         <div className="inline-flex">
                             <Link
-                                to="tracks"
+                                to="/"
                                 smooth={true}
                                 duration={500}
                                 className={`${activeLink === "tracks"
@@ -176,7 +176,7 @@ const Register = () => {
                         </div>
                         <div className="inline-flex">
                             <Link
-                                to="prizes"
+                                to="/"
                                 smooth={true}
                                 duration={500}
                                 className={`${activeLink === "prizes"
@@ -190,7 +190,7 @@ const Register = () => {
                         </div>
                         <div className="inline-flex">
                             <Link
-                                to="abouthack"
+                                to="/"
                                 smooth={true}
                                 duration={500}
                                 className={`${activeLink === "abouthack"
@@ -204,7 +204,7 @@ const Register = () => {
                         </div>
                         <div className="inline-flex">
                             <Link
-                                to="faq"
+                                to="/"
                                 smooth={true}
                                 duration={500}
                                 className={`${activeLink === "faq"
