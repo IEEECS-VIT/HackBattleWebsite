@@ -14,26 +14,29 @@ function App() {
   return (
     <>
       <Layout>
-      <Routes>
-        <Route path='/' element={
-          <>
-            <Home />
-            <AboutHack />
-            {/* <Prizes/> */}
-            <Tracks />
-            <ConductedBy />
-            <FAQ />
-          </>
-        } />
-        <Route path='/register' element={<Register />} />
-      </Routes>
-      <div id='space'>
-        <div className='stars'></div>
-        <div className='stars'></div>
-        <div className='stars'></div>
-        <div className='stars'></div>
-        <div className='stars'></div>
-      </div>
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <>
+                <Home />
+                <AboutHack />
+                {/* <Prizes/> */}
+                <Tracks />
+                <ConductedBy />
+                <FAQ />
+              </>
+            }
+          />
+          <Route path='/register' element={<Register />} />
+        </Routes>
+        <div id='space'>
+          <div className='stars'></div>
+          <div className='stars'></div>
+          <div className='stars'></div>
+          <div className='stars'></div>
+          <div className='stars'></div>
+        </div>
       </Layout>
     </>
   );

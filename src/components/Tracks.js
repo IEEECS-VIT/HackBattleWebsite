@@ -24,8 +24,6 @@ const Tracks = () => {
       <div ref={ref2}>
         <svg
           className='track-svg'
-          width='826'
-          height='763'
           viewBox='0 0 826 763'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'

@@ -1,4 +1,5 @@
-#space, .stars {
+#space,
+.stars {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -10,13 +11,16 @@
 }
 
 .stars {
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+  background-image: radial-gradient(
+      2px 2px at 20px 30px,
+      #eee,
+      rgba(0, 0, 0, 0)
+    ),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
   background-repeat: repeat;
   background-size: 200px 200px;
   animation: zoom 5s infinite;
@@ -49,7 +53,7 @@
     opacity: 0;
     transform: scale(0.5);
     animation-timing-function: ease-in;
-  } 
+  }
   85% {
     opacity: 1;
     transform: scale(2.8);
@@ -61,16 +65,15 @@
   }
 }
 
-
 /* Demo syles 
 ------------------------------------- */
 
 body {
-  background:#000917 ;
+  background: #000917;
   font-family: 'Orbitron', sans-serif;
 }
 
-*{
+* {
   /* put no select */
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -80,8 +83,56 @@ body {
   user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
-@media screen and (max-width: 1300px) {
-  svg {
-    visibility: hidden;
+.AboutHack > div > div > div {
+  font-size: 1.25vw;
+  line-height: 2vw;
+}
+
+.bdhead {
+  font-size: 1.4vw !important;
+}
+
+@media screen and (max-width: 1280px) {
+  .track-svg {
+    display: none;
+  }
+  .cb2-svg {
+    display: none;
+  }
+  .cb-svg {
+    display: none;
+  }
+  .ab-hack-svg {
+    display: none;
+  }
+  .AboutHack > div {
+    height: 41.5vw;
+    width: 70vw;
+  }
+  .AboutHack > div > div > div {
+    font-size: 1.55vw;
+    line-height: 3vw;
+  }
+  .bdhead {
+    font-size: 1.7vw !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .AboutHack > div {
+    height: 125vw;
+    width: 85vw;
+    margin-top: 64vw;
+  }
+  .AboutHack > div > div > div {
+    font-size: 3.2vw;
+    line-height: 5.3vw;
+    z-index: 100;
+  }
+  .bdhead {
+    font-size: 2.9vw !important;
+  }
+  .track-body {
+    margin-top: 80vw !important;
   }
 }

@@ -1,25 +1,31 @@
 .ab-hack-svg {
-    margin: auto;
-    margin-top: 60px;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: -62%;
+  margin-right: 7%;
+  margin-left: -1%;
 }
 
 .no-path {
-    opacity: 0;
-} 
-.path {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: dash 7s linear forwards;
+  opacity: 0;
 }
-  
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 7s linear forwards;
+}
+
 @keyframes dash {
-    to {
-        stroke-dashoffset: 0;
-    }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .AboutHack {
-    margin:auto;
-    margin-top: -800px;
-    margin-left: 5vw;
+  margin: auto;
+  height: 64vw;
+}
+
+.about::-webkit-scrollbar {
+  display: none;
 }

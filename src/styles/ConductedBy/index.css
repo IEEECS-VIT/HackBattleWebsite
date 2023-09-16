@@ -1,32 +1,31 @@
-.SITE-logo{
-    margin: 5% 0%;
-    display: flex;
-    justify-content: center;
+.SITE-logo {
+  /* margin: 5% 0%; */
+  display: flex;
+  justify-content: center;
 }
 
-.other-logos{
-    display: flex;
-    justify-content: space-around;
-    margin: 7% 0%;
-    
+.other-logos {
+  display: flex;
+  justify-content: space-around;
+  margin: 7% 0%;
 }
 
-.body{
-    width: 90%;
+.body {
+  width: 90%;
 }
 
-.Azadi-logo-inner{
-    width: 400px;
+.Azadi-logo-inner {
+  width: 400px;
 }
-.IIC-logo-inner{
-    margin-top: 100px;
-    width: 650px;
+.IIC-logo-inner {
+  margin-top: 100px;
+  width: 650px;
 }
-.G20-logo-inner{
-    margin-left: 110px;
-    width: 400px;
+.G20-logo-inner {
+  margin-left: 2vw;
+  width: 400px;
 }
-.axure-logo-inner{
-    margin-top: 70px;
-    width: 500px;
+.axure-logo-inner {
+  margin-top: 70px;
+  width: 500px;
 }
