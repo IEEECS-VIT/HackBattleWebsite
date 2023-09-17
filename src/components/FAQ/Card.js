@@ -11,7 +11,7 @@ export default function Card({ question, answer }) {
       onMouseLeave={() => setIsHovering(false)}
     >
       {/* Answer Box */}
-      <div className={`sliding-div ${isHovering ? 'visible' : ''}`}>
+      <div className={`sliding-div ${isHovering ? 'visible' : 'hidden'}`}>
         <p className='FAQ_answer'>{answer}</p>
       </div>
       {/* Question Box */}
