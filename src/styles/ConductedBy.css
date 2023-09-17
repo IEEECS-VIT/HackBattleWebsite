@@ -1,6 +1,7 @@
 .cb-svg {
-  margin-left: 45vw;
-  margin-top: -90px;
+  display: none;
+  /* margin-left: 45vw;
+  margin-top: -90px; */
 }
 
 .cb-no-path {
