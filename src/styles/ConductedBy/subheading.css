@@ -24,3 +24,10 @@
   width: 13vw;
   margin-bottom: calc(10.5vw - 38px);
 } */
+
+@media screen and (max-width: 760px){
+  .subheading-inner{
+    height: 50px;
+    width: 300px;
+  }
+}

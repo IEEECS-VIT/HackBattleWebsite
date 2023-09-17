@@ -97,7 +97,7 @@ export default function ConductedBy() {
         <div className='Azadi-logo'>
           <img className='Azadi-logo-inner' src={Wolfram} alt='Wolfram Logo' />
         </div>
-        <div className='axure-logo mt-10'>
+        <div className='axure-logo mt-10 mb-16'>
           <img className='axure-logo-inner' src={axure} alt='Azure Logo' />
         </div>
       </div>

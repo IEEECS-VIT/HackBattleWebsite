@@ -29,3 +29,29 @@
   margin-top: 70px;
   width: 500px;
 }
+
+@media screen and (max-width: 760px) {
+  .other-logos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Azadi-logo-inner {
+    width: 200px;
+    margin-top: 50px;
+  }
+  .IIC-logo-inner {
+    margin-top: 0px;
+    width: 300px;
+  }
+  .G20-logo-inner {
+
+    margin-left: 2vw;
+    width: 200px;
+  }
+  .axure-logo-inner {
+    margin-top: 0px;
+    width: 200px;
+    margin-bottom: 80px;
+  }
+}
