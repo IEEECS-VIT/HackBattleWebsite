@@ -12,7 +12,7 @@ function QRCodePopup({ isOpen, onClose, qrCodeData }) {
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
     content: {
-      maxWidth: '50vw',
+      maxWidth: '60vmax',
       maxHeight: '50vh',
       margin: 'auto',
       backgroundColor: 'rgba(0, 0, 0, 0.8)',
@@ -44,7 +44,7 @@ function QRCodePopup({ isOpen, onClose, qrCodeData }) {
           <h2>QR Code</h2>
           <QRCode
             value={qrCodeData}
-            size={200}
+            size={'27vh'}
             style={{ border: '5px solid white' }}
           />
           <button onClick={onClose}>Close</button>
@@ -131,7 +131,7 @@ const Team = () => {
                   <QRCodePopup
                     isOpen={isModalOpen}
                     onClose={closeModal}
-                    qrCodeData={teamData.team.referenceNumber}
+                    qrCodeData={`https://hackbattle.ieeecsvit.com/register?ref=${teamData.team.referenceNumber}`}
                   />
                   <p className='font-chakra text-neoBlue select-text'>
                     {teamData.team.referenceNumber}
