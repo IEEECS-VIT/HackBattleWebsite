@@ -21,6 +21,15 @@ const Home = () => {
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
+  const scrollUpByScreenHeight = () => {
+    const screenHeight = window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;
+    setTimeout(() => {
+      window.scrollBy({
+        top: -screenHeight,
+        behavior: 'smooth',
+      });
+    }, 800);
+  };
 
   const navClasses = `lg:hidden ${
     isNavOpen ? "h-screen w-full" : "h-16"
@@ -30,7 +39,7 @@ const Home = () => {
   } z-40`;
 
   return (
-    <div>
+    <div onClick={toggleNav}>
       <nav className={navClasses} style={{fontFamily:"Chakra Petch"}}>
         {!isNavOpen&&(<div className="block absolute right-6 top-6 lg:hidden mt-4 mb-4">
           <button
@@ -77,7 +86,7 @@ const Home = () => {
                     ? " text-neoBlue text-neoBlue-900"
                     : " text-white text-white-500"
                 } cursor-pointer items-center px-1 pt-1 text-xl font-bold block mt-4 lg:inline-block lg:mt-1 mr-4`}
-                onClick={() => {handleLinkClick("home");toggleNav()}}
+                onClick={() => {handleLinkClick("home");toggleNav();scrollUpByScreenHeight();}}
               >
                 Home
               </Link>
@@ -92,7 +101,7 @@ const Home = () => {
                     ? " text-neoBlue text-neoBlue-900"
                     : " text-white text-white-500"
                 } cursor-pointer items-center px-1 pt-1  text-xl font-bold block mt-4 lg:inline-block lg:mt-1 mr-4`}
-                onClick={() => {toggleNav();handleLinkClick("tracks");}}
+                onClick={() => {toggleNav();handleLinkClick("tracks");scrollUpByScreenHeight();}}
               >
                 Tracks
               </Link>
@@ -107,7 +116,7 @@ const Home = () => {
                     ? " text-neoBlue text-neoBlue-900"
                     : " text-white text-white-500"
                 } cursor-pointer items-center px-1 pt-1  text-xl font-bold block mt-4 lg:inline-block lg:mt-1 mr-4`}
-                onClick={() => {handleLinkClick("prizes");toggleNav();}}
+                onClick={() => {handleLinkClick("prizes");toggleNav();scrollUpByScreenHeight();}}
               >
                 Prizes
               </Link>
@@ -122,7 +131,7 @@ const Home = () => {
                     ? " text-neoBlue text-neoBlue-900"
                     : " text-white text-white-500"
                 } cursor-pointer items-center px-1 pt-1  text-xl font-bold block mt-4 lg:inline-block lg:mt-1 mr-4`}
-                onClick={() => {handleLinkClick("abouthack");toggleNav()}}
+                onClick={() => {handleLinkClick("abouthack");toggleNav();scrollUpByScreenHeight();}}
               >
                 About Hack
               </Link>
@@ -137,7 +146,7 @@ const Home = () => {
                     ? " text-neoBlue text-neoBlue-900"
                     : " text-white text-white-500"
                 } cursor-pointer items-center px-1 pt-1 text-xl font-bold block mt-4 lg:inline-block lg:mt-1 mr-4`}
-                onClick={() => {handleLinkClick("faq");toggleNav()}}
+                onClick={() => {handleLinkClick("faq");toggleNav();}}
               >
                 FAQ
               </Link>
