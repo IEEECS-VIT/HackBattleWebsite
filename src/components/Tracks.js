@@ -39,46 +39,20 @@ const Tracks = () => {
 
       <div className='tracks_div'>
         <TracksCard
-          name='Smart Health and Hygiene'
-          desc="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book."
+          name='WEB 3.0'
+          
         />
         <TracksCard
-          name='Agriculture & Smart Crop'
-          desc="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book."
+          name='HEALTHCARE '
+          
         />
         <TracksCard
-          name='Safety Security & Surveillance'
-          desc="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book."
+          name='VIT CENTRIC '
+         
         />
         <TracksCard
-          name='Transportation & Renuable Energy'
-          desc="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book."
-        />
-        <TracksCard
-          name='Space & Satellite technologies'
-          desc="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book."
-        />
-        <TracksCard
-          name='Governance & Facilities'
-          desc="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book."
+          name='OPEN INNOVATION (SDGs)'
+         
         />
       </div>
     </div>
@@ -86,3 +60,4 @@ const Tracks = () => {
 };
 
 export default Tracks;
+

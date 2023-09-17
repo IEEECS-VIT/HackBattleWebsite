@@ -1,20 +1,24 @@
-.card {
+.custom-card{
   flex-basis: 24vmax;
-  width: 11rem;
-  height: 20.5vmax;
   position: relative;
+  height: 10rem;
+  width: 4rem;
   margin: 5% 3%;
-  /* background: #000917 !important;  */
   background: #00ffed !important;
   clip-path: polygon(0% 0%, 80% 0%, 100% 20%, 100% 100%, 20% 100%, 0% 80%);
 }
 
 .card_top {
   position: absolute;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
   top: 2px;
   left: 2px;
   right: 2px;
   bottom: 2px;
+  border: solid #00ffed;
   background: #000917;
   clip-path: polygon(0% 0%, 80% 0%, 100% 20%, 100% 100%, 20% 100%, 0% 80%);
 }
@@ -25,26 +29,15 @@
   padding: 5%;
   font-family: 'Chakra Petch';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 900;
   font-size: 1.7vw;
   line-height: 1.7vw;
+  margin-top: 40px;
   text-align: center;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
   color: #00ffed;
 }
 
-.card_summary {
-  font-family: 'Chakra Petch';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.1vw;
-  line-height: 120%;
-  color: #ffffff;
-  padding: 0% 12%;
-  display: flex;
-  text-align: justify;
-}
 
 @media screen and (max-width: 1024px) {
   .card_heading {
@@ -52,9 +45,7 @@
     line-height: 2.2vmax;
   }
 
-  .card_summary {
-    font-size: 1.7vmax;
-  }
+  
 
   .card {
     flex-basis: 38vmax;
@@ -68,9 +59,7 @@
     line-height: 2.5vmax;
   }
 
-  .card_summary {
-    font-size: 1.9vmax;
-  }
+  
 
   .card {
     flex-basis: 40vmax;
