@@ -260,7 +260,7 @@ const Home = () => {
       </nav>
       <div className="relative w-full h-screen overflow-hidden">
       <div
-          className="absolute left-0 w-full h-full bg-center-bottom bg-repeat-x brightness-100 top-44 lg:top-72"
+          className="absolute left-0 w-full h-full bg-center-bottom bg-repeat-x brightness-100 top-72 lg:top-72"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         ></div>
       {/* <div
