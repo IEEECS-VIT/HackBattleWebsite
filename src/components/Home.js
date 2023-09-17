@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/Home.module.css';
 import backgroundImage from '../assets/background.png';
+import bg1 from '../assets/backgroundmobile.png'
 import { Link } from 'react-scroll';
 
 const Home = () => {
@@ -31,21 +32,23 @@ const Home = () => {
   return (
     <div>
       <nav className={navClasses} style={{fontFamily:"Chakra Petch"}}>
-        <div className="block absolute right-6 top-6 lg:hidden mt-4 mb-4">
+        {!isNavOpen&&(<div className="block absolute right-6 top-6 lg:hidden mt-4 mb-4">
           <button
             className="flex items-center px-3 py-2 border rounded text-white-200 hover:text-neoBlue"
             onClick={toggleNav}
           >
             <svg
-              className="fill-current h-4 w-4"
+              className="fill-current h-6 w-6"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
+              style={{color:"white",}}
             >
               <title>Menu</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
           </button>
         </div>
+)}
         {isNavOpen && (
           <div className="black text-white absolute top-0 left-0 h-screen w-screen p-4">
             <ul>
@@ -55,7 +58,7 @@ const Home = () => {
             onClick={toggleNav}
           >
             <svg
-              className="fill-current h-4 w-4"
+              className="fill-current h-6 w-6"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -155,7 +158,6 @@ const Home = () => {
             REGISTER NOW!
           </a>
             </div>
-              {/* Add other navigation links here */}
             </ul>
           </div>
         )}
