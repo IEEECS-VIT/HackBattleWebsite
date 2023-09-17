@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import styles from '../styles/Home.module.css';
 import backgroundImage from '../assets/background.png';
 import bg1 from '../assets/backgroundmobile.png'
+import logohome from '../assets/navbar_logo_home.png'
+import logonav from '../assets/navbar_logo_navbar.png'
 import { Link } from 'react-scroll';
 
 const Home = () => {
@@ -41,18 +43,10 @@ const Home = () => {
       <nav className={navClasses} style={{ fontFamily: "Chakra Petch" }}>
         {!isNavOpen && (<div className="block absolute right-6 top-6 lg:hidden mt-4 mb-4">
           <button
-            className="flex items-center px-3 py-2 border rounded text-white-200 hover:text-neoBlue"
+            className="flex items-center px-3 py-2 rounded text-white-200 hover:text-neoBlue"
             onClick={toggleNav}
           >
-            <svg
-              className="fill-current h-6 w-6"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{ color: "white", }}
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
+            <img src={logohome} className='fill-current h-12 w-12'></img>
           </button>
         </div>
         )}
@@ -61,17 +55,10 @@ const Home = () => {
             <ul>
               <div className="block absolute right-6 top-6 lg:hidden mt-4 mb-4">
                 <button
-                  className="flex items-center px-3 py-2 border rounded text-white-200 hover:text-neoBlue"
+                  className="flex items-center px-3 py-2 rounded text-white-200 hover:text-neoBlue"
                   onClick={toggleNav}
                 >
-                  <svg
-                    className="fill-current h-6 w-6"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <title>Menu</title>
-                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-                  </svg>
+                  <img src={logonav} className='fill-current h-12 w-12'></img>
                 </button>
               </div><br></br>
               <div className="text-center mt-20 ">
