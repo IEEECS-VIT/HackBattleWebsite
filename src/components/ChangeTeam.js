@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Axios from 'axios';
+import { Config } from './Config';
 
 const ChangeTeam = () => {
   const [activeLink, setActiveLink] = useState('home');
