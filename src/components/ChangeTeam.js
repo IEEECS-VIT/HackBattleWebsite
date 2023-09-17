@@ -179,12 +179,12 @@ const ChangeTeam = () => {
                     </div>
                 </div>
             </nav>
-            <div className="px-10 flex flex-col items-center">
-                <div className="flex flex-col justify-center items-center w-5/6 my-14">
+            <div className="px-2 md:px-10 flex flex-col items-center">
+                <div className="flex flex-col justify-center items-center w-full md:w-5/6 my-14">
                     <p className="text-neoBlue font-chakra">Switch your team for</p>
                     <h1 className="pt-7 text-3xl font-bold tracking-widest text-white font-chakra">HACKBATTLE'<span className="text-neoBlue">23</span></h1>
                 </div>
-                <div className="flex flex-col justify-center items-center w-2/3">
+                <div className="flex flex-col justify-center items-center w-full md:w-2/3">
                     <div className="flex flex-col w-5/6 my-4">
                         <label htmlFor="FirstName" className="font-chakra text-neoBlue mb-2">Registration number</label>
                         <input type="text" placeholder="Enter your registration number" className="font-chakra bg-neoBlueLight p-1 px-2 border-0 outline-0 text-white" value={regNo} onChange={regNoHandler}></input>
@@ -198,8 +198,8 @@ const ChangeTeam = () => {
                         <input type="text" placeholder="Enter new reference number" className="font-chakra bg-neoBlueLight p-1 px-2 border-0 outline-0 text-white" value={newReferenceNumber} onChange={newReferenceNumberHandler}></input>
                     </div>
                 </div>
-                <div class={`${errorStatus === '' ? 'hidden' : 'block'} bg-red-100 border border-red-400 text-red-700 px-4 mt-4 py-3 rounded relative`} role="alert">
-                    <strong class="font-bold">{errorStatus}</strong>
+                <div class={`${errorStatus === '' ? 'hidden' : 'flex'} bg-red-100 border border-red-400 text-red-700 px-1 md:px-4 mt-4 py-3 rounded relative`} role="alert">
+                    <strong class="font-bold mr-1">{errorStatus}</strong>
                     <span class="block sm:inline"> {errorMsg}</span>
                 </div>
                 <button

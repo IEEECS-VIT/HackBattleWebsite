@@ -158,12 +158,12 @@ const Team = () => {
                     </div>
                 </div>
             </nav>
-            <div className="px-10 flex flex-col items-center">
-                <div className="flex flex-col justify-center items-center w-5/6 my-14">
+            <div className="px-2 md:px-10 flex flex-col items-center">
+                <div className="flex flex-col justify-center items-center w-full md:w-5/6 my-14">
                     <p className="text-neoBlue font-chakra">Yay! you are successfully registered! <span className="text-black">🎉</span></p>
                     <h1 className="pt-7 text-3xl font-bold tracking-widest text-white font-chakra">HACKBATTLE'<span className="text-neoBlue">23</span></h1>
                 </div>
-                <div className="flex flex-col justify-center w-2/3">
+                <div className="flex flex-col justify-center w-full px-4 md:px-0 md:w-2/3">
                     <h1 className="text-neoBlue font-chakra text-2xl font-bold">TEAM DETAILS</h1>
                     <div className="flex flex-col w-full my-4 mx-auto">
                         <div className="flex justify-between my-3 p-2 px-4 font-chakra bg-neoBlueLight border-0 outline-0 text-white">
@@ -174,7 +174,7 @@ const Team = () => {
                                 <p>Loading team data...</p>
                             )}
                         </div>
-                        <div className="flex justify-between my-3 p-2 px-4 font-chakra bg-neoBlueLight border-0 outline-0 text-white">
+                        <div className="flex-col md:flex-row flex justify-between my-3 p-2 px-4 font-chakra bg-neoBlueLight border-0 outline-0 text-white">
                             <p className="font-chakra">Team Referral Code</p>
                             {teamData ? (
                                 <p className="font-chakra text-neoBlue select-text">{teamData.team.referenceNumber}</p>
@@ -183,7 +183,7 @@ const Team = () => {
                             )}
 
                         </div>
-                        <div className="flex justify-between my-3 p-2 px-4 font-chakra bg-neoBlueLight border-0 outline-0 text-white">
+                        <div className="flex-col md:flex-row flex justify-between my-3 p-2 px-4 font-chakra bg-neoBlueLight border-0 outline-0 text-white">
                             <p className="font-chakra">Repository Link</p>
                             {teamData ? (<p className="font-chakra text-neoBlue">{teamData.teamLeader.git_link}</p>) : (<p>Loading team data...</p>)}
                         </div>

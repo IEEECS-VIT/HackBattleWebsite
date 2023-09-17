@@ -335,8 +335,8 @@ const Register = () => {
                                 <input type="text" placeholder="Phone number" className="font-chakra bg-neoBlueLight p-1 px-2 border-0 outline-0 text-white" value={leaderPhoneNo} onChange={leaderPhoneNoHandler}></input>
                             </div>
                         </div>
-                        <div class={`${errorStatus === '' ? 'hidden' : 'block'} bg-red-100 border border-red-400 text-red-700 px-4 mt-4 py-3 rounded relative`} role="alert">
-                            <strong class="font-bold">{errorStatus}</strong>
+                        <div class={`${errorStatus === '' ? 'hidden' : 'flex'} bg-red-100 border border-red-400 text-red-700 px-1 md:px-4 mt-4 py-3 rounded relative`} role="alert">
+                            <strong class="font-bold mr-1">{errorStatus}</strong>
                             <span class="block sm:inline"> {errorMsg}</span>
                         </div>
                         <button
@@ -377,8 +377,8 @@ const Register = () => {
                                 <input type="text" placeholder="Enter team referral code" className="font-chakra bg-neoBlueLight p-1 px-2 border-0 outline-0 text-white" value={refCode} onChange={refCodeHandler}></input>
                             </div>
                         </div>
-                        <div class={`${errorStatus === '' ? 'hidden' : 'block'} bg-red-100 border border-red-400 text-red-700 px-4 mt-4 py-3 rounded relative`} role="alert">
-                            <strong class="font-bold">{errorStatus}</strong>
+                        <div class={`${errorStatus === '' ? 'hidden' : 'flex'} bg-red-100 border border-red-400 text-red-700 px-1 md:px-4 mt-4 py-3 rounded relative`} role="alert">
+                            <strong class="font-bold mr-1">{errorStatus}</strong>
                             <span class="block sm:inline"> {errorMsg}</span>
                         </div>
                         <button
