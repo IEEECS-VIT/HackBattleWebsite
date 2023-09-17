@@ -11,6 +11,7 @@ import Register from './components/Register';
 import { Route, Routes } from 'react-router-dom';
 import Team from './components/Team';
 import ChangeTeam from './components/ChangeTeam';
+import NoTeamFound from './components/NoTeamFound';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/changeTeam' element={<ChangeTeam />} />
         <Route path='/team/:referenceNumber' element={<Team/>}/>
+        <Route path='/team/null' element={<NoTeamFound/>}/>
       </Routes>
       <div id='space'>
         <div className='stars'></div>
