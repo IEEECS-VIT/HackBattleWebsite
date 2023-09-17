@@ -79,4 +79,10 @@
   .faq_div {
     gap: 10px;
   }
+  .FAQ_question {
+    font-size: 2.6vmin;
+  }
+  .FAQ_answer {
+    font-size: 2.4vmin;
+  }
 }
