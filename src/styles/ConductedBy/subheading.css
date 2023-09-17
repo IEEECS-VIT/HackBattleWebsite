@@ -1,26 +1,26 @@
-.subheading-outer{
-    display: flex;
-    justify-content: center;  
+.subheading-outer {
+  display: flex;
+  justify-content: center;
+  margin-top: -4vw;
 }
 
-.subheading-inner{
-    background: #00FFED;
-    width: 45vmin;
-    height: 6vmin;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Chakra Petch';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 120%;
-    line-height: 25px;
-    text-transform: uppercase;
-    clip-path: polygon(
-        20% 0%,
-        100% 0%, 
-        80% 100%, 
-        0% 100%, 
-        20% 0%
-    );
+.subheading-inner {
+  background: #00ffed;
+  width: 45vmin;
+  height: 6vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 120%;
+  line-height: 25px;
+  text-transform: uppercase;
+  clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%, 20% 0%);
 }
+
+/* .site-logo {
+  width: 13vw;
+  margin-bottom: calc(10.5vw - 38px);
+} */

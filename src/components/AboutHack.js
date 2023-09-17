@@ -19,7 +19,6 @@ const AboutHack = () => {
       <div ref={ref1}>
         <svg
           className='ab-hack-svg'
-          width='1300px'
           viewBox='0 0 1329 663'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
@@ -57,7 +56,7 @@ const AboutHack = () => {
         </svg>
       </div>
 
-      <div className='AboutHack flex h-screen items-center justify-center -mt-14'>
+      <div className='AboutHack flex items-center justify-center -mt-14'>
         <div
           style={{
             clipPath:
@@ -70,11 +69,11 @@ const AboutHack = () => {
               clipPath:
                 'polygon(5% 0,100% 0,100% 90%,55% 90%,50% 100%, 0 100%,0 10%)',
             }}
-            className='absolute top-0.5 bottom-0.5 right-0.5 left-0.5 bg-darkBlue'
+            className='absolute about overflow-y-scroll top-0.5 bottom-0.5 right-0.5 left-0.5 bg-darkBlue'
           >
             <div
               style={{ clipPath: 'polygon(5% 0,100% 0,90% 100%,0 100%)' }}
-              className='top-0 left-0 w-1/3 bg-neoBlue text-darkBlue items-center justify-center flex font-chakra font-extrabold text-xl'
+              className='bdhead sticky z-50 top-0 left-0 w-1/3 bg-neoBlue text-darkBlue items-center justify-center flex font-chakra font-extrabold text-xl'
             >
               About HackBattle
             </div>
@@ -83,10 +82,23 @@ const AboutHack = () => {
                 clipPath:
                   'polygon(0 0,100% 0,100% 90%,80% 90%,70% 100%,0 100%)',
               }}
-              className='p-4 inline-block text-white font-medium font-chakra text-base'
+              className='p-6 inline-block text-white font-medium font-chakra text-base xl:text-xl'
             >
-              HackBattle is an exhilarating 36-hour event hosted annually by IEEE Computer Society - VIT, drawing participants from far and wide. Fueled by passion and endless coffee, teams immerse themselves in crafting creative solutions to intricate challenges. The battlefield mirrors real-world complexities, urging participants to utilize cutting-edge technologies like Machine Learning, Cloud Computing, Blockchain, IoT, AR/VR, and more to tackle thought-provoking problem statements.
-Living up to its name, HackBattle becomes the epic battleground where modern-day technological warriors emerge and fresh innovations take flight within an accelerated time frame. It also holds in-store keynote sessions along with fun and engaging activities. With the spirit of creativity and teamwork, the ultimate battle of minds commences, fostering an atmosphere of friendly competition and collaboration.
+              HackBattle is an exhilarating 36-hour event hosted annually by
+              IEEE Computer Society - VIT, drawing participants from far and
+              wide. Fueled by passion and endless coffee, teams immerse
+              themselves in crafting creative solutions to intricate challenges.
+              The battlefield mirrors real-world complexities, urging
+              participants to utilize cutting-edge technologies like Machine
+              Learning, Cloud Computing, Blockchain, IoT, AR/VR, and more to
+              tackle thought-provoking problem statements. Living up to its
+              name, HackBattle becomes the epic battleground where modern-day
+              technological warriors emerge and fresh innovations take flight
+              within an accelerated time frame. It also holds in-store keynote
+              sessions along with fun and engaging activities. With the spirit
+              of creativity and teamwork, the ultimate battle of minds
+              commences, fostering an atmosphere of friendly competition and
+              collaboration.
             </div>
           </div>
         </div>

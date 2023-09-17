@@ -1,78 +1,74 @@
-.FAQcard{
-    width: 90vmin;
-    height: 7vmin;
-    position: relative;
-    margin: 3% 0%;
-    background: #00FFED !important; 
-    clip-path: polygon(
-        5% 0%,
-        100% 0%, 
-        100% 80%, 
-        95% 100%, 
-        0% 100%,
-        0% 20%
-    );
+.FAQcard {
+  width: 90vmin;
+  height: 7vmin;
+  position: relative;
+  margin: 3% 0%;
+  background: #00ffed !important;
+  clip-path: polygon(5% 0%, 100% 0%, 100% 80%, 95% 100%, 0% 100%, 0% 20%);
 }
 
-.FAQcard_top{
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    right: 2px;
-    bottom: 2px;
-    background: #000917; 
-    clip-path: polygon(
-        5% 0%,
-        100% 0%, 
-        100% 80%, 
-        95% 100%, 
-        0% 100%,
-        0% 20%
-    );
+.FAQcard_top {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #000917;
+  clip-path: polygon(5% 0%, 100% 0%, 100% 80%, 95% 100%, 0% 100%, 0% 20%);
 }
 
-.FAQ_question{
-    font-family: 'Chakra Petch';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 100%;
-    line-height: 120%;
-    letter-spacing: 0.03em;
-    color: #00FFED;
-    display: flex;
-    justify-content: center;
-    margin: 2% 0%;
+.FAQ_question {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2.3vmin;
+  line-height: 120%;
+  letter-spacing: 0.03em;
+  color: #00ffed;
+  display: flex;
+  justify-content: center;
+  margin: 2% 0%;
 }
 
-.FAQ_arrow{
-    padding: 2.5%;
-    
+.FAQ_arrow {
+  padding: 2.5%;
 }
 
-.FAQ_container{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 5%;
-    color: #00FFED;
+.FAQ_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  color: #00ffed;
 }
 
-.main-div{
-    position: relative;
-    margin: 3% 0;
+.main-div {
+  position: relative;
+  margin: 3% 0;
 }
 
 .sliding-div {
-    position: absolute;
-    top: 60%;
-    left: 0;
-    right: 0;
-    height: 0;
-    overflow: hidden;
-    /* transition: height 0.3s ease-out; */
-    padding: 5% 5%;
+  position: absolute;
+  top: 60%;
+  left: 0;
+  right: 0;
+  height: 0;
+  overflow: hidden;
+  /* transition: height 0.3s ease-out; */
+  padding: 5% 5%;
 }
-  
+
 .sliding-div.visible {
-    height: 100px; /* Change this to the height you want the sliding div to be */
-    background-color: #00FFED;
+  height: 100px; /* Change this to the height you want the sliding div to be */
+  background-color: #00ffed;
 }
+
+/* @media only screen and (max-width: 1080px) {
+  .FAQ_question {
+    font-size: 1.1em;
+  }
+} */
+/* @media only screen and (max-width: 640px) {
+  .FAQ_question {
+    font-size: 0.75em;
+  }
+} */
