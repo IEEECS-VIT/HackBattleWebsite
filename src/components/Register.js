@@ -127,7 +127,7 @@ const Register = () => {
             Axios.post(Config.BASE_URL + '/team_member', {
                 name: memberFirstName + ' ' + memberLastName,
                 email: memberEmail,
-                git_link: memberGithub,
+                // git_link: memberGithub,
                 phone_num: memberPhoneNo,
                 Reg_num: memberRegNo,
                 referenceNumber: refCode
@@ -242,10 +242,10 @@ const Register = () => {
                                 <label htmlFor="Email" className="font-chakra text-neoBlue mb-2">Email</label>
                                 <input type="email" placeholder="Email" className="font-chakra bg-neoBlueLight p-1 px-2 border-0 outline-0 text-white" value={memberEmail} onChange={memberEmailHandler}></input>
                             </div>
-                            <div className="flex flex-col w-5/6 my-4">
+                            {/* <div className="flex flex-col w-5/6 my-4">
                                 <label htmlFor="Email" className="font-chakra text-neoBlue mb-2">Github Link</label>
                                 <input type="text" placeholder="Enter your Github repository link" className="font-chakra bg-neoBlueLight p-1 px-2 border-0 outline-0 text-white" value={memberGithub} onChange={memberGithubHandler}></input>
-                            </div>
+                            </div> */}
                             <div className="flex flex-col w-5/6 my-4">
                                 <label htmlFor="RegNo" className="font-chakra text-neoBlue mb-2">Registration number</label>
                                 <input type="text" placeholder="Enter your Registration number" className="font-chakra bg-neoBlueLight p-1 px-2 border-0 outline-0 text-white" value={memberRegNo} onChange={memberRegNoHandler}></input>
