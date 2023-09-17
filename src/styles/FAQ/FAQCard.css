@@ -30,6 +30,10 @@
   margin: 2% 0%;
 }
 
+.FAQ_answer {
+  font-size: 2.1vmin;
+}
+
 .FAQ_arrow {
   padding: 2.5%;
 }
@@ -58,8 +62,12 @@
 }
 
 .sliding-div.visible {
-  height: 100px; /* Change this to the height you want the sliding div to be */
+  height: 12vmin; /* Change this to the height you want the sliding div to be */
   background-color: #00ffed;
+  overflow-y: scroll;
+}
+.sliding-div.visible::-webkit-scrollbar {
+  display: none;
 }
 
 /* @media only screen and (max-width: 1080px) {
@@ -67,8 +75,8 @@
     font-size: 1.1em;
   }
 } */
-/* @media only screen and (max-width: 640px) {
-  .FAQ_question {
-    font-size: 0.75em;
+@media only screen and (max-width: 640px) {
+  .faq_div {
+    gap: 10px;
   }
-} */
+}
