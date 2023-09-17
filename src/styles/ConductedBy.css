@@ -48,6 +48,7 @@
   width: 100%;
   margin-top: 10px;
   margin-bottom: calc(10.5vw - 38px);
+  gap: 13vw;
 }
 .SITE-logo-inner {
   width: 28vw;
