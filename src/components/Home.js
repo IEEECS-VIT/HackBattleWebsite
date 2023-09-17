@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/Home.module.css';
 import backgroundImage from '../assets/background.png';
@@ -9,9 +9,16 @@ const Home = () => {
   const handleLinkClick = (link) => {
     setActiveLink(link);
   };
+
+  const [refNumber, setRefNumber] = useState('');
+
+  useEffect(() => {
+    setRefNumber(localStorage.getItem('refCode'));
+  }, []);
+
   return (
     <div>
-      <nav className="flex items-center justify-between flex-wrap bg-transparent-500 pr-8 pl-8 py-4 border-neoBlue border-neoBlue-400 border-b-2  z-10" style={{fontFamily:"Chakra Petch"}}>
+      <nav className="flex items-center justify-between flex-wrap bg-transparent-500 pr-8 pl-8 py-4 border-neoBlue border-neoBlue-400 border-b-2  z-10" style={{ fontFamily: "Chakra Petch" }}>
         <div className="block lg:hidden">
           <button className="flex items-center px-3 py-2 border rounded text-white-200 hover:text-neoBlue">
             <svg
@@ -31,11 +38,10 @@ const Home = () => {
                 to="/"
                 smooth={true}
                 duration={500}
-                className={`${
-                  activeLink === "home"
-                    ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
-                    : " text-white text-white-500"
-                } cursor-pointer items-center px-1 pt-1 text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
+                className={`${activeLink === "home"
+                  ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                  : " text-white text-white-500"
+                  } cursor-pointer items-center px-1 pt-1 text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
                 onClick={() => handleLinkClick("home")}
               >
                 Home
@@ -46,11 +52,10 @@ const Home = () => {
                 to="tracks"
                 smooth={true}
                 duration={500}
-                className={`${
-                  activeLink === "tracks"
-                    ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
-                    : " text-white text-white-500"
-                } cursor-pointer items-center px-1 pt-1  text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
+                className={`${activeLink === "tracks"
+                  ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                  : " text-white text-white-500"
+                  } cursor-pointer items-center px-1 pt-1  text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
                 onClick={() => handleLinkClick("tracks")}
               >
                 Tracks
@@ -61,11 +66,10 @@ const Home = () => {
                 to="prizes"
                 smooth={true}
                 duration={500}
-                className={`${
-                  activeLink === "prizes"
-                    ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
-                    : " text-white text-white-500"
-                } cursor-pointer items-center px-1 pt-1  text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
+                className={`${activeLink === "prizes"
+                  ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                  : " text-white text-white-500"
+                  } cursor-pointer items-center px-1 pt-1  text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
                 onClick={() => handleLinkClick("prizes")}
               >
                 Prizes
@@ -76,11 +80,10 @@ const Home = () => {
                 to="abouthack"
                 smooth={true}
                 duration={500}
-                className={`${
-                  activeLink === "abouthack"
-                    ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
-                    : " text-white text-white-500"
-                } cursor-pointer items-center px-1 pt-1  text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
+                className={`${activeLink === "abouthack"
+                  ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                  : " text-white text-white-500"
+                  } cursor-pointer items-center px-1 pt-1  text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
                 onClick={() => handleLinkClick("abouthack")}
               >
                 About Hack
@@ -91,15 +94,26 @@ const Home = () => {
                 to="faq"
                 smooth={true}
                 duration={500}
-                className={`${
-                  activeLink === "faq"
-                    ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
-                    : " text-white text-white-500"
-                } cursor-pointer items-center px-1 pt-1 text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
+                className={`${activeLink === "faq"
+                  ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                  : " text-white text-white-500"
+                  } cursor-pointer items-center px-1 pt-1 text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
                 onClick={() => handleLinkClick("faq")}
               >
                 FAQ
               </Link>
+            </div>
+            <div className="inline-flex">
+              <a
+                href={`/team/${refNumber}`}
+                className={`${activeLink === "team"
+                  ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                  : " text-white text-white-500"
+                  } cursor-pointer items-center px-1 pt-1 text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
+                onClick={() => handleLinkClick("team")}
+              >
+                Team
+              </a>
             </div>
           </div>
           <div className="flex-basis-1/2 mr-8">
@@ -124,10 +138,10 @@ const Home = () => {
         <div className={styles.textContainer}>
           <h1 className={styles.title}>HackBattle</h1>
           <p className={styles.subtitle}>
-          Synthesize, Optimize, Materialize{" "}
+            Synthesize, Optimize, Materialize{" "}
           </p>
           <a
-            
+
             style={{
               clipPath:
                 "polygon(0 0, 100% 0, 100% 20%, 97% 30%,97% 70%,100% 80%, 100% 100%, 5% 100%,0% 80%)",

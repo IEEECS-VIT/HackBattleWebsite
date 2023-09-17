@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 
@@ -27,8 +27,16 @@ const ChangeTeam = () => {
     const [errorStatus, setErrorStatus] = useState('');
     const [errorMsg, setErrorMsg] = useState('Error');
 
+    const [referenceNumber, setReferenceNumber] = useState('');
+
+    useEffect(()=>{
+        setReferenceNumber(localStorage.getItem('refCode'));
+    }, []);
+
     const changeTeamHandler = async () => {
         try {
+            setErrorStatus('');
+            setErrorMsg('');
             await Axios.put('http://localhost:5000/change_team', {
                 Reg_num: regNo,
                 newReferenceNumber: newReferenceNumber,
@@ -36,6 +44,7 @@ const ChangeTeam = () => {
             })
                 .then(function (response) {
                     console.log(response);
+                    localStorage.setItem('refCode', response.data.newReferenceNumber);
                     navigate(`/team/${response.data.newReferenceNumber}`);
                 })
                 .catch(function (error) {
@@ -138,6 +147,20 @@ const ChangeTeam = () => {
                                 onClick={() => handleLinkClick("faq")}
                             >
                                 FAQ
+                            </Link>
+                        </div>
+                        <div className="inline-flex">
+                            <Link
+                                to={`/team/${referenceNumber}`}
+                                smooth={true}
+                                duration={500}
+                                className={`${activeLink === "team"
+                                    ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                                    : " text-white text-white-500"
+                                    } cursor-pointer items-center px-1 pt-1 text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
+                                onClick={() => handleLinkClick("team")}
+                            >
+                                Team
                             </Link>
                         </div>
                     </div>

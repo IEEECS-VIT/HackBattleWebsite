@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 
@@ -55,6 +55,8 @@ const Register = () => {
 
     const leaderSubmitHandler = async () => {
         try {
+            setErrorStatus('');
+            setErrorMsg('');
             await Axios.post('http://localhost:5000/team_leader', {
                 name: leaderFirstName + ' ' + leaderLastName,
                 teamName: teamName,
@@ -65,6 +67,7 @@ const Register = () => {
             })
                 .then(function (response) {
                     console.log(response);
+                    localStorage.setItem('refCode', response.data.referenceNumber);
                     navigate(`/team/${response.data.referenceNumber}`);
                 })
                 .catch(function (error) {
@@ -118,6 +121,8 @@ const Register = () => {
 
     const memberSubmitHandler = () => {
         try {
+            setErrorStatus('');
+            setErrorMsg('');
             Axios.post('http://localhost:5000/team_member', {
                 name: memberFirstName + ' ' + memberLastName,
                 email: memberEmail,
@@ -128,6 +133,7 @@ const Register = () => {
             })
                 .then(function (response) {
                     console.log(response);
+                    localStorage.setItem('refCode', response.data.referenceNumber);
                     navigate(`/team/${response.data.referenceNumber}`);
                 })
                 .catch(function (error) {
@@ -147,6 +153,12 @@ const Register = () => {
             console.log(error);
         }
     }
+
+    const [referenceNumber, setReferenceNumber] = useState('');
+
+    useEffect(()=>{
+        setReferenceNumber(localStorage.getItem('refCode'));
+    }, []);
 
 
     return (
@@ -234,6 +246,20 @@ const Register = () => {
                                 onClick={() => handleLinkClick("faq")}
                             >
                                 FAQ
+                            </Link>
+                        </div>
+                        <div className="inline-flex">
+                            <Link
+                                to={`/team/${referenceNumber}`}
+                                smooth={true}
+                                duration={500}
+                                className={`${activeLink === "team"
+                                    ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                                    : " text-white text-white-500"
+                                    } cursor-pointer items-center px-1 pt-1 text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
+                                onClick={() => handleLinkClick("team")}
+                            >
+                                Team
                             </Link>
                         </div>
                     </div>
