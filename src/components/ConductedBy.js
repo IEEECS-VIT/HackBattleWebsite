@@ -8,6 +8,7 @@ import echo3D from '../assets/logos/echo3D.png';
 import LavieSports from '../assets/logos/LavieSport.png';
 import Wolfram from '../assets/logos/Wolfram.png';
 import axure from '../assets/logos/Axure.png';
+import spon from '../assets/logos/aaaaaa.png'
 import '../styles/ConductedBy/index.css';
 import Subheading from './ConductedBy/subheading';
 import '../styles/ConductedBy.css';
@@ -97,8 +98,11 @@ export default function ConductedBy() {
         <div className='Azadi-logo'>
           <img className='Azadi-logo-inner' src={Wolfram} alt='Wolfram Logo' />
         </div>
-        <div className='axure-logo mt-10 mb-16'>
+        <div className='axure-logo mt-10 '>
           <img className='axure-logo-inner' src={axure} alt='Azure Logo' />
+        </div>
+        <div className='spon-logo mb-16'>
+          <img className='spon-logo-inner' src={spon} alt='Sponsor Logo' />
         </div>
       </div>
     </div>
