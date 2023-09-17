@@ -50,15 +50,25 @@
   margin-bottom: calc(10.5vw - 38px);
 }
 .SITE-logo-inner {
-  width: 35vw;
+  width: 28vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .SITE-logo-inner {
+    width: 40vw;
+  }
 }
 
 .other-logos {
-  margin-top: 13vw;
-  margin-bottom: calc(13vw - 155px);
+  margin-top: 6.75vw;
+  margin-bottom: calc(24vw - 324px);
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1280px) {
+  .other-logos {
+    margin-top: 13vw;
+    margin-bottom: calc(13vw - 155px);
+  }
   /* .cb2-svg {
     display: none;
   } */

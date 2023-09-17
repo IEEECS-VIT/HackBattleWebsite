@@ -8,7 +8,7 @@ import echo3D from '../assets/logos/echo3D.png';
 import LavieSports from '../assets/logos/LavieSport.png';
 import Wolfram from '../assets/logos/Wolfram.png';
 import axure from '../assets/logos/Axure.png';
-import spon from '../assets/logos/aaaaaa.png'
+import spon from '../assets/logos/aaaaaa.png';
 import '../styles/ConductedBy/index.css';
 import Subheading from './ConductedBy/subheading';
 import '../styles/ConductedBy.css';
@@ -81,6 +81,7 @@ export default function ConductedBy() {
       </div>
 
       <div className='SITE-logo'>
+        <img className='SITE-logo-inner' src={SITELogo} alt='SITE Logo' />
         <img className='SITE-logo-inner' src={SITELogo} alt='SITE Logo' />
       </div>
       <Subheading />
