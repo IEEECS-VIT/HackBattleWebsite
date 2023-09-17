@@ -123,7 +123,7 @@ const Team = () => {
               {teamData ? (
                 <>
                   <button
-                    className='font-chakra text-neoBlue select-text'
+                    className='font-chakra font-medium underline select-text'
                     onClick={openModal}
                   >
                     Show QR Code
