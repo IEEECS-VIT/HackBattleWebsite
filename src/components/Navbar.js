@@ -185,7 +185,7 @@ const Navbar = () => {
                         </div>
                         <div className="inline-flex">
                             <Link
-                                to="tracks"
+                                to="/"
                                 smooth={true}
                                 duration={500}
                                 className={`${activeLink === "tracks"
@@ -213,7 +213,7 @@ const Navbar = () => {
                         </div> */}
                         <div className="inline-flex">
                             <Link
-                                to="abouthack"
+                                to="/"
                                 smooth={true}
                                 duration={500}
                                 className={`${activeLink === "abouthack"
@@ -227,7 +227,7 @@ const Navbar = () => {
                         </div>
                         <div className="inline-flex">
                             <Link
-                                to="faq"
+                                to="/"
                                 smooth={true}
                                 duration={500}
                                 className={`${activeLink === "faq"
