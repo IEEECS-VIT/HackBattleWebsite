@@ -3,9 +3,63 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import Axios from 'axios';
 import { Config } from './Config';
 import Navbar from './Navbar';
+import Modal from 'react-modal';
+import QRCode from 'react-qr-code';
 
+function QRCodePopup({ isOpen, onClose, qrCodeData }) {
+
+    const customStyles = {
+        overlay: {
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        },
+        content: {
+          maxWidth: '50vw',
+            maxHeight: '50vh',
+          margin: 'auto',
+          backgroundColor: 'rgba(0, 0, 0, 0.8)', 
+          alignItems: 'center',
+          padding: '20px',
+        },
+      };
+
+    return (
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={onClose}
+        contentLabel="QR Code Popup"
+        style={customStyles}
+      >
+        <div>
+          
+          <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            fontFamily: 'Chakra Petch',
+            alignItems: 'center',
+            height: '100%',
+            color: '#00ffed',
+            padding: '20px',
+            
+          }}
+        >
+        <h2>QR Code</h2>
+          <QRCode value={qrCodeData} size={200} />
+          <button onClick={onClose}>Close</button>
+        </div>
+
+          
+        </div>
+      </Modal>
+    );
+  }
 const Team = () => {
   const [activeLink, setActiveLink] = useState('home');
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
@@ -23,7 +77,9 @@ const Team = () => {
                 .then(function(response){
                     setTeamData(response.data);
                     console.log(response.data);
-                })
+
+                }
+                )
                 .catch(function (error) {
                     if(error.response.data.error === 'Team not found'){
                         Navigate('/team/null');
@@ -59,7 +115,11 @@ const Team = () => {
                         <div className="flex-col md:flex-row flex justify-between my-3 p-2 px-4 font-chakra bg-neoBlueLight border-0 outline-0 text-white">
                             <p className="font-chakra">Team Referral Code</p>
                             {teamData ? (
+                                <>
+                                <button className="font-chakra text-neoBlue select-text" onClick={openModal}>Show QR Code</button>
+                                <QRCodePopup isOpen={isModalOpen} onClose={closeModal} qrCodeData={teamData.team.referenceNumber} />
                                 <p className="font-chakra text-neoBlue select-text">{teamData.team.referenceNumber}</p>
+                                </>
                             ) : (
                                 <p>Loading team data...</p>
                             )}
