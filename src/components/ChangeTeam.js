@@ -29,7 +29,7 @@ const ChangeTeam = () => {
 
     const changeTeamHandler = async () => {
         try {
-            await Axios.put('http://localhost:3000/change_team', {
+            await Axios.put('http://localhost:5000/change_team', {
                 Reg_num: regNo,
                 newReferenceNumber: newReferenceNumber,
                 oldReferenceNumber: oldReferenceNumber

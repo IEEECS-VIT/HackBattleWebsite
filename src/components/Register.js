@@ -55,7 +55,7 @@ const Register = () => {
 
     const leaderSubmitHandler = async () => {
         try {
-            await Axios.post('http://localhost:3000/team_leader', {
+            await Axios.post('http://localhost:5000/team_leader', {
                 name: leaderFirstName + ' ' + leaderLastName,
                 teamName: teamName,
                 email: leaderEmail,
@@ -118,7 +118,7 @@ const Register = () => {
 
     const memberSubmitHandler = () => {
         try {
-            Axios.post('http://localhost:3000/team_member', {
+            Axios.post('http://localhost:5000/team_member', {
                 name: memberFirstName + ' ' + memberLastName,
                 email: memberEmail,
                 git_link: memberGithub,
@@ -251,17 +251,16 @@ const Register = () => {
                     </div>
                 </div>
             </nav>
-            <div className="px-10 flex flex-col items-center">
-                <div className="flex flex-col justify-center items-center w-5/6">
-                    <h1 className="py-7 text-3xl font-bold tracking-widest text-white font-chakra">WELCOME TO HACKBATTLE'<span className="text-neoBlue">23</span></h1>
+            <div className="px-2 md:px-10 flex flex-col items-center">
+                <div className="flex flex-col justify-center items-center w-auto md:w-5/6">
+                    <h1 className="py-7 text-xl md:text-3xl font-bold tracking-widest text-white font-chakra">WELCOME TO HACKBATTLE'<span className="text-neoBlue">23</span></h1>
                     <div className="flex justify-center pb-5">
-
                         <button
                             style={{
                                 clipPath:
                                     'polygon(0 0, 100% 0, 100% 20%, 97% 30%,97% 70%,100% 80%, 100% 100%, 5% 100%,0% 80%)',
                             }}
-                            className={`inline-block w-52 text-md mx-5 px-10 py-5 font-chakra font-extrabold leading-none border text-darkBlue ${activeRegister === 'Leader' ? 'bg-neoBlue' : 'bg-lightGrey'}`}
+                            className={`inline-block w-40 md:w-52 text-sm md:text-base mx-2 md:mx-5 px-2 md:px-10 py-2 md:py-4 font-chakra font-bold leading-none border text-darkBlue ${activeRegister === 'Leader' ? 'bg-neoBlue' : 'bg-lightGrey'}`}
                             onClick={leaderClickHandler}
                         >
                             REGISTER AS TEAM LEADER
@@ -271,7 +270,7 @@ const Register = () => {
                                 clipPath:
                                     'polygon(0 0, 100% 0, 100% 80%, 95% 100%,0% 100%, 0% 80%, 3% 70%, 3% 30%, 0% 20%)',
                             }}
-                            className={`inline-block w-52 text-md mx-5 px-10 py-5 font-chakra font-extrabold leading-none border text-darkBlue ${activeRegister === 'Member' ? 'bg-neoBlue' : 'bg-lightGrey'}`}
+                            className={`inline-block w-40 md:w-52 text-sm md:text-base mx-2 md:mx-5 px-2 md:px-10 py-2 md:py-4 font-chakra font-bold leading-none border text-darkBlue ${activeRegister === 'Member' ? 'bg-neoBlue' : 'bg-lightGrey'}`}
                             onClick={memberClickHandler}
                         >
                             REGISTER AS TEAM MEMBER
@@ -280,7 +279,7 @@ const Register = () => {
                 </div>
                 {activeRegister === 'Leader' ?
                     <>
-                        <div className="flex flex-col items-center w-5/6">
+                        <div className="flex flex-col items-center w-full md:w-5/6">
                             <div className="flex flex-col w-5/6 my-4">
                                 <label htmlFor="FirstName" className="font-chakra text-neoBlue mb-2">First name</label>
                                 <input type="text" placeholder="First name" className="font-chakra bg-neoBlueLight p-1 px-2 border-0 outline-0 text-white" value={leaderFirstName} onChange={leaderFirstNameHandler}></input>
@@ -322,7 +321,7 @@ const Register = () => {
                         </button>
                     </>
                     : <>
-                        <div className="flex flex-col items-center w-5/6">
+                        <div className="flex flex-col items-center w-full md:w-5/6">
                             <div className="flex flex-col w-5/6 my-4">
                                 <label htmlFor="FirstName" className="font-chakra text-neoBlue mb-2">First name</label>
                                 <input type="text" placeholder="First name" className="font-chakra bg-neoBlueLight p-1 px-2 border-0 outline-0 text-white" value={memberFirstName} onChange={memberFirstNameHandler}></input>
@@ -357,7 +356,7 @@ const Register = () => {
                             <span class="block sm:inline"> {errorMsg}</span>
                         </div>
                         <button
-                            className='inline-block w-52 text-md my-10 mx-5 px-10 py-2 font-chakra font-extrabold leading-none border text-darkBlue bg-neoBlue'
+                            className='inline-block w-60 text-md my-10 mx-5 px-5 py-3 font-chakra font-extrabold leading-none border text-darkBlue bg-neoBlue'
                             onClick={memberSubmitHandler}
                         >
                             Register As Team Member

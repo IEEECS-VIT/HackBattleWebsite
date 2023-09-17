@@ -17,7 +17,7 @@ const Team = () => {
     useEffect(() => {
         const fetchTeamData = async () => {
             try {
-                const response = await Axios.get(`http://localhost:3000/team/${referenceNumber}`);
+                const response = await Axios.get(`http://localhost:5000/team/${referenceNumber}`);
                 setTeamData(response.data);
                 console.log(response.data);
             } catch (error) {
