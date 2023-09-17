@@ -9,6 +9,8 @@ import ConductedBy from './components/ConductedBy';
 import Layout from './components/Layout';
 import Register from './components/Register';
 import { Route, Routes } from 'react-router-dom';
+import Team from './components/Team';
+import ChangeTeam from './components/ChangeTeam';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           </>
         } />
         <Route path='/register' element={<Register />} />
+        <Route path='/changeTeam' element={<ChangeTeam />} />
+        <Route path='/team/:referenceNumber' element={<Team/>}/>
       </Routes>
       <div id='space'>
         <div className='stars'></div>

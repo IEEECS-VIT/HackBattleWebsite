@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 
 const Register = () => {
@@ -49,28 +49,40 @@ const Register = () => {
         setLeaderPhoneNo(e.target.value);
     }
 
-    const leaderSubmitHandler = () => {
-        Axios.post('http://localhost:3000/team_leader', {
-            name: leaderFirstName + ' ' + leaderLastName,
-            teamName: teamName,
-            email: leaderEmail,
-            git_link: leaderGithub,
-            phone_num: leaderPhoneNo,
-            reg_num: leaderRegNo
-        })
-            .then(function (response) {
-                console.log(response);
+    const navigate = useNavigate();
+    const [errorStatus, setErrorStatus] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
+
+    const leaderSubmitHandler = async () => {
+        try {
+            await Axios.post('http://localhost:3000/team_leader', {
+                name: leaderFirstName + ' ' + leaderLastName,
+                teamName: teamName,
+                email: leaderEmail,
+                git_link: leaderGithub,
+                phone_num: leaderPhoneNo,
+                reg_num: leaderRegNo
             })
-            .catch(function (error) {
-                console.log(error);
-            });
-        setLeaderFirstName('');
-        setLeaderLastName('');
-        setTeamName('');
-        setLeaderEmail('');
-        setLeaderGithub('');
-        setLeaderPhoneNo('');
-        setLeaderRegNo('');
+                .then(function (response) {
+                    console.log(response);
+                    navigate(`/team/${response.data.referenceNumber}`);
+                })
+                .catch(function (error) {
+                    setErrorStatus(error.response.request.status);
+                    setErrorMsg(error.response.data.error);
+                    console.log(error);
+                });
+            setLeaderFirstName('');
+            setLeaderLastName('');
+            setTeamName('');
+            setLeaderEmail('');
+            setLeaderGithub('');
+            setLeaderPhoneNo('');
+            setLeaderRegNo('');
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
 
     //Team Member Details Handler
@@ -105,27 +117,35 @@ const Register = () => {
     }
 
     const memberSubmitHandler = () => {
-        Axios.post('http://localhost:3000/team_member', {
-            name: memberFirstName + ' ' + memberLastName,
-            email: memberEmail,
-            git_link: memberGithub,
-            phone_num: memberPhoneNo,
-            Reg_num: memberRegNo,
-            referenceNumber: refCode
-        })
-            .then(function (response) {
-                console.log(response);
+        try {
+            Axios.post('http://localhost:3000/team_member', {
+                name: memberFirstName + ' ' + memberLastName,
+                email: memberEmail,
+                git_link: memberGithub,
+                phone_num: memberPhoneNo,
+                Reg_num: memberRegNo,
+                referenceNumber: refCode
             })
-            .catch(function (error) {
-                console.log(error);
-            });
-        setMemberFirstName('');
-        setMemberLastName('');
-        setMemberEmail('');
-        setMemberGithub('');
-        setMemberRegNo('');
-        setMemberPhoneNo('');
-        setRefCode('');
+                .then(function (response) {
+                    console.log(response);
+                    navigate(`/team/${response.data.referenceNumber}`);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    setErrorStatus(error.response.request.status);
+                    setErrorMsg(error.response.data.error);
+                });
+            setMemberFirstName('');
+            setMemberLastName('');
+            setMemberEmail('');
+            setMemberGithub('');
+            setMemberRegNo('');
+            setMemberPhoneNo('');
+            setRefCode('');
+        }
+        catch (error) {
+            console.log(error);
+        }
     }
 
 
@@ -152,8 +172,8 @@ const Register = () => {
                                 smooth={true}
                                 duration={500}
                                 className={`${activeLink === "home"
-                                        ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
-                                        : " text-white text-white-500"
+                                    ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                                    : " text-white text-white-500"
                                     } cursor-pointer items-center px-1 pt-1 text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
                                 onClick={() => handleLinkClick("home")}
                             >
@@ -166,8 +186,8 @@ const Register = () => {
                                 smooth={true}
                                 duration={500}
                                 className={`${activeLink === "tracks"
-                                        ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
-                                        : " text-white text-white-500"
+                                    ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                                    : " text-white text-white-500"
                                     } cursor-pointer items-center px-1 pt-1  text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
                                 onClick={() => handleLinkClick("tracks")}
                             >
@@ -180,8 +200,8 @@ const Register = () => {
                                 smooth={true}
                                 duration={500}
                                 className={`${activeLink === "prizes"
-                                        ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
-                                        : " text-white text-white-500"
+                                    ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                                    : " text-white text-white-500"
                                     } cursor-pointer items-center px-1 pt-1  text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
                                 onClick={() => handleLinkClick("prizes")}
                             >
@@ -194,8 +214,8 @@ const Register = () => {
                                 smooth={true}
                                 duration={500}
                                 className={`${activeLink === "abouthack"
-                                        ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
-                                        : " text-white text-white-500"
+                                    ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                                    : " text-white text-white-500"
                                     } cursor-pointer items-center px-1 pt-1  text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
                                 onClick={() => handleLinkClick("abouthack")}
                             >
@@ -208,8 +228,8 @@ const Register = () => {
                                 smooth={true}
                                 duration={500}
                                 className={`${activeLink === "faq"
-                                        ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
-                                        : " text-white text-white-500"
+                                    ? "border-neoBlue border-b-4 border-neoBlue-500 text-neoBlue text-neoBlue-900"
+                                    : " text-white text-white-500"
                                     } cursor-pointer items-center px-1 pt-1 text-xl font-medium block mt-4 lg:inline-block lg:mt-1 mr-4`}
                                 onClick={() => handleLinkClick("faq")}
                             >
@@ -290,11 +310,15 @@ const Register = () => {
                                 <input type="text" placeholder="Phone number" className="font-chakra bg-neoBlueLight p-1 px-2 border-0 outline-0 text-white" value={leaderPhoneNo} onChange={leaderPhoneNoHandler}></input>
                             </div>
                         </div>
+                        <div class={`${errorStatus === '' ? 'hidden' : 'block'} bg-red-100 border border-red-400 text-red-700 px-4 mt-4 py-3 rounded relative`} role="alert">
+                            <strong class="font-bold">{errorStatus}</strong>
+                            <span class="block sm:inline"> {errorMsg}</span>
+                        </div>
                         <button
-                            className='inline-block w-52 text-md my-10 mx-5 px-10 py-2 font-chakra font-extrabold leading-none border text-darkBlue bg-neoBlue'
+                            className='inline-block w-60 text-md my-10 mx-5 px-5 py-3 font-chakra font-extrabold leading-none border text-darkBlue bg-neoBlue'
                             onClick={leaderSubmitHandler}
                         >
-                            REGISTER AS TEAM LEADER
+                            Register As Team Leader
                         </button>
                     </>
                     : <>
@@ -328,11 +352,15 @@ const Register = () => {
                                 <input type="text" placeholder="Enter team referral code" className="font-chakra bg-neoBlueLight p-1 px-2 border-0 outline-0 text-white" value={refCode} onChange={refCodeHandler}></input>
                             </div>
                         </div>
+                        <div class={`${errorStatus === '' ? 'hidden' : 'block'} bg-red-100 border border-red-400 text-red-700 px-4 mt-4 py-3 rounded relative`} role="alert">
+                            <strong class="font-bold">{errorStatus}</strong>
+                            <span class="block sm:inline"> {errorMsg}</span>
+                        </div>
                         <button
                             className='inline-block w-52 text-md my-10 mx-5 px-10 py-2 font-chakra font-extrabold leading-none border text-darkBlue bg-neoBlue'
                             onClick={memberSubmitHandler}
                         >
-                            REGISTER AS TEAM MEMBER
+                            Register As Team Member
                         </button>
                     </>}
             </div>

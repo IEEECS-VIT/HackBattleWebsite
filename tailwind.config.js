@@ -5,14 +5,15 @@ module.exports = {
     extend: {
       height: {
         '7%': '7%',
-      }
-    },
-    colors: {
-      "neoBlue": '#00FFED',
-      "darkBlue": "#000917",
-      "white": "#ffffff",
-      "neoBlueLight": '#00ffed26',
-      "lightGrey": '#E8FFFD'
+      },
+      colors: {
+        "neoBlue": '#00FFED',
+        "darkBlue": "#000917",
+        "white": "#ffffff",
+        "neoBlueLight": '#00ffed26',
+        "lightGrey": '#E8FFFD',
+        "lighterGrey": "#88888826"
+      },
     },
     fontFamily:{
       "chakra": "Chakra Petch, sans-serif",
