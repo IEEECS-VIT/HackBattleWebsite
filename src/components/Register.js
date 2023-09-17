@@ -1,63 +1,63 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import Axios from 'axios';
+import { Config } from './Config';
 
 const Register = () => {
+  const [activeLink, setActiveLink] = useState('home');
 
-    const [activeLink, setActiveLink] = useState('home');
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
 
-    const handleLinkClick = (link) => {
-        setActiveLink(link);
-    };
+  const [activeRegister, setActiveRegister] = useState('Leader');
+  const leaderClickHandler = () => {
+    setActiveRegister('Leader');
+  };
+  const memberClickHandler = () => {
+    setActiveRegister('Member');
+  };
 
-    const [activeRegister, setActiveRegister] = useState('Leader');
-    const leaderClickHandler = () => {
-        setActiveRegister('Leader');
-    }
-    const memberClickHandler = () => {
-        setActiveRegister('Member');
-    }
+  // Team Leader Details Handlers
+  const [leaderFirstName, setLeaderFirstName] = useState('');
+  const [leaderLastName, setLeaderLastName] = useState('');
+  const [teamName, setTeamName] = useState('');
+  const [leaderEmail, setLeaderEmail] = useState('');
+  const [leaderGithub, setLeaderGithub] = useState('');
+  const [leaderRegNo, setLeaderRegNo] = useState('');
+  const [leaderPhoneNo, setLeaderPhoneNo] = useState('');
 
-    // Team Leader Details Handlers
-    const [leaderFirstName, setLeaderFirstName] = useState('');
-    const [leaderLastName, setLeaderLastName] = useState('');
-    const [teamName, setTeamName] = useState('');
-    const [leaderEmail, setLeaderEmail] = useState('');
-    const [leaderGithub, setLeaderGithub] = useState('');
-    const [leaderRegNo, setLeaderRegNo] = useState('');
-    const [leaderPhoneNo, setLeaderPhoneNo] = useState('');
+  const leaderFirstNameHandler = (e) => {
+    setLeaderFirstName(e.target.value);
+  };
+  const leaderLastNameHandler = (e) => {
+    setLeaderLastName(e.target.value);
+  };
+  const teamNameHandler = (e) => {
+    setTeamName(e.target.value);
+  };
+  const leaderEmailHandler = (e) => {
+    setLeaderEmail(e.target.value);
+  };
+  const leaderGithubHandler = (e) => {
+    setLeaderGithub(e.target.value);
+  };
+  const leaderRegNoHandler = (e) => {
+    setLeaderRegNo(e.target.value);
+  };
+  const leaderPhoneNoHandler = (e) => {
+    setLeaderPhoneNo(e.target.value);
+  };
 
-    const leaderFirstNameHandler = (e) => {
-        setLeaderFirstName(e.target.value);
-    }
-    const leaderLastNameHandler = (e) => {
-        setLeaderLastName(e.target.value);
-    }
-    const teamNameHandler = (e) => {
-        setTeamName(e.target.value);
-    }
-    const leaderEmailHandler = (e) => {
-        setLeaderEmail(e.target.value);
-    }
-    const leaderGithubHandler = (e) => {
-        setLeaderGithub(e.target.value);
-    }
-    const leaderRegNoHandler = (e) => {
-        setLeaderRegNo(e.target.value);
-    }
-    const leaderPhoneNoHandler = (e) => {
-        setLeaderPhoneNo(e.target.value);
-    }
-
-    const navigate = useNavigate();
-    const [errorStatus, setErrorStatus] = useState('');
-    const [errorMsg, setErrorMsg] = useState('');
+  const navigate = useNavigate();
+  const [errorStatus, setErrorStatus] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
 
     const leaderSubmitHandler = async () => {
         try {
             setErrorStatus('');
             setErrorMsg('');
-            await Axios.post('http://localhost:5000/team_leader', {
+            await Axios.post(Config.BASE_URL + '/team_leader', {
                 name: leaderFirstName + ' ' + leaderLastName,
                 teamName: teamName,
                 email: leaderEmail,
@@ -88,42 +88,42 @@ const Register = () => {
         }
     }
 
-    //Team Member Details Handler
-    const [memberFirstName, setMemberFirstName] = useState('');
-    const [memberLastName, setMemberLastName] = useState('');
-    const [memberEmail, setMemberEmail] = useState('');
-    const [memberGithub, setMemberGithub] = useState('');
-    const [memberRegNo, setMemberRegNo] = useState('');
-    const [memberPhoneNo, setMemberPhoneNo] = useState('');
-    const [refCode, setRefCode] = useState('');
+  //Team Member Details Handler
+  const [memberFirstName, setMemberFirstName] = useState('');
+  const [memberLastName, setMemberLastName] = useState('');
+  const [memberEmail, setMemberEmail] = useState('');
+  const [memberGithub, setMemberGithub] = useState('');
+  const [memberRegNo, setMemberRegNo] = useState('');
+  const [memberPhoneNo, setMemberPhoneNo] = useState('');
+  const [refCode, setRefCode] = useState('');
 
-    const memberFirstNameHandler = (e) => {
-        setMemberFirstName(e.target.value);
-    }
-    const memberLastNameHandler = (e) => {
-        setMemberLastName(e.target.value);
-    }
-    const memberEmailHandler = (e) => {
-        setMemberEmail(e.target.value);
-    }
-    const memberGithubHandler = (e) => {
-        setMemberGithub(e.target.value);
-    }
-    const memberRegNoHandler = (e) => {
-        setMemberRegNo(e.target.value);
-    }
-    const MemberPhoneNoHandler = (e) => {
-        setMemberPhoneNo(e.target.value);
-    }
-    const refCodeHandler = (e) => {
-        setRefCode(e.target.value);
-    }
+  const memberFirstNameHandler = (e) => {
+    setMemberFirstName(e.target.value);
+  };
+  const memberLastNameHandler = (e) => {
+    setMemberLastName(e.target.value);
+  };
+  const memberEmailHandler = (e) => {
+    setMemberEmail(e.target.value);
+  };
+  const memberGithubHandler = (e) => {
+    setMemberGithub(e.target.value);
+  };
+  const memberRegNoHandler = (e) => {
+    setMemberRegNo(e.target.value);
+  };
+  const MemberPhoneNoHandler = (e) => {
+    setMemberPhoneNo(e.target.value);
+  };
+  const refCodeHandler = (e) => {
+    setRefCode(e.target.value);
+  };
 
     const memberSubmitHandler = () => {
         try {
             setErrorStatus('');
             setErrorMsg('');
-            Axios.post('http://localhost:5000/team_member', {
+            Axios.post(Config.BASE_URL + '/team_member', {
                 name: memberFirstName + ' ' + memberLastName,
                 email: memberEmail,
                 git_link: memberGithub,

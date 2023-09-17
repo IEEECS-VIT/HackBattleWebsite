@@ -1,23 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Axios from 'axios';
+import { Config } from './Config';
 
 const Team = () => {
-    const [activeLink, setActiveLink] = useState('home');
+  const [activeLink, setActiveLink] = useState('home');
 
-    const handleLinkClick = (link) => {
-        setActiveLink(link);
-    };
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
 
-    const Navigate = useNavigate();
+  const Navigate = useNavigate();
 
-    const { referenceNumber } = useParams();
-    const [teamData, setTeamData] = useState(null);
+  const { referenceNumber } = useParams();
+  const [teamData, setTeamData] = useState(null);
 
     useEffect(() => {
         const fetchTeamData = async () => {
             try {
-                await Axios.get(`http://localhost:5000/team/${referenceNumber}`)
+                await Axios.get(`${Config.BASE_URL}/team/${referenceNumber}`)
                 .then(function(response){
                     setTeamData(response.data);
                     console.log(response.data);

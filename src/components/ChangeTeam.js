@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import Axios from 'axios';
+import { Config } from './Config';
 
 const ChangeTeam = () => {
     const [activeLink, setActiveLink] = useState('home');
@@ -13,13 +14,13 @@ const ChangeTeam = () => {
     const [newReferenceNumber, setNewReferenceNumber] = useState('');
     const [oldReferenceNumber, setOldReferenceNumber] = useState('');
 
-    const regNoHandler = (e) =>{
+    const regNoHandler = (e) => {
         setRegNo(e.target.value);
     }
-    const newReferenceNumberHandler = (e) =>{
+    const newReferenceNumberHandler = (e) => {
         setNewReferenceNumber(e.target.value);
     }
-    const oldReferenceNumberHandler = (e) =>{
+    const oldReferenceNumberHandler = (e) => {
         setOldReferenceNumber(e.target.value);
     }
 
@@ -29,7 +30,7 @@ const ChangeTeam = () => {
 
     const [referenceNumber, setReferenceNumber] = useState('');
 
-    useEffect(()=>{
+    useEffect(() => {
         setReferenceNumber(localStorage.getItem('refCode'));
     }, []);
 
@@ -37,7 +38,7 @@ const ChangeTeam = () => {
         try {
             setErrorStatus('');
             setErrorMsg('');
-            await Axios.put('http://localhost:5000/change_team', {
+            await Axios.put(Config.BASE_URL + '/change_team', {
                 Reg_num: regNo,
                 newReferenceNumber: newReferenceNumber,
                 oldReferenceNumber: oldReferenceNumber
@@ -198,9 +199,9 @@ const ChangeTeam = () => {
                     </div>
                 </div>
                 <div class={`${errorStatus === '' ? 'hidden' : 'block'} bg-red-100 border border-red-400 text-red-700 px-4 mt-4 py-3 rounded relative`} role="alert">
-                            <strong class="font-bold">{errorStatus}</strong>
-                            <span class="block sm:inline"> {errorMsg}</span>
-                        </div>
+                    <strong class="font-bold">{errorStatus}</strong>
+                    <span class="block sm:inline"> {errorMsg}</span>
+                </div>
                 <button
                     className='inline-block w-44 text-md my-10 mx-5 px-5 py-3 font-chakra font-bold leading-none border text-darkBlue bg-neoBlue'
                     onClick={changeTeamHandler}
