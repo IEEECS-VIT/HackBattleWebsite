@@ -165,7 +165,7 @@ const Register = () => {
       <Navbar />
       <div className='px-2 md:px-10 flex flex-col items-center'>
         <div className='flex flex-col justify-center items-center w-auto md:w-5/6'>
-          <h1 className='py-7 text-xl md:text-3xl font-bold tracking-widest text-white font-chakra'>
+          <h1 className='pb-10 pt-14 text-xl md:text-3xl font-bold tracking-widest text-white font-chakra'>
             WELCOME TO HACKBATTLE'<span className='text-neoBlue'>23</span>
           </h1>
           <div className='flex justify-center pb-5'>
@@ -307,10 +307,10 @@ const Register = () => {
             <div
               class={`${
                 errorStatus === '' ? 'hidden' : 'flex'
-              } bg-red-100 border border-red-400 text-red-700 px-1 md:px-4 mt-4 py-3 rounded relative`}
+              } bg-red-100 border border-red-400 text-red-700 px-2 md:px-4 mt-4 py-3 rounded relative`}
               role='alert'
             >
-              <strong class='font-bold mr-1'>{errorStatus}</strong>
+              {/* <strong class='font-bold mr-1'>{errorStatus}</strong> */}
               <span class='block sm:inline'> {errorMsg}</span>
             </div>
             <button
@@ -424,7 +424,7 @@ const Register = () => {
               } bg-red-100 border border-red-400 text-red-700 px-1 md:px-4 mt-4 py-3 rounded relative`}
               role='alert'
             >
-              <strong class='font-bold mr-1'>{errorStatus}</strong>
+              {/* <strong class='font-bold mr-1'>{errorStatus}</strong> */}
               <span class='block sm:inline'> {errorMsg}</span>
             </div>
             <button
