@@ -10,6 +10,23 @@ const Tracks = () => {
   const inViewport1 = useIntersection(ref2, '0px'); // Trigger as soon as the element becomes visible
   const inViewport2 = useIntersection(ref2, '-200px'); // Trigger if 200px is visible from the element
 
+  // Define the two different d attribute values
+  const dAttribute1300to1600 =
+    'M407.5 1H412.5H417.5M407.5 1H398M407.5 1H389V52L369.5 80H1V218M398 1V52L372.5 88.5L207.5 89.5V622.5H1V600M417.5 1H426.5M417.5 1V53L446.5 92.5H628.5V273H562M426.5 1H436V52L456 77H824.5V218M426.5 1V52L452.5 85H637V622.7H824.5V';
+  const dAttributeAbove1600 =
+    'M407.5 1H412.5H417.5M407.5 1H398M407.5 1H389V52L369.5 80H1V218M398 1V52L372.5 88.5L207.5 89.5V522.5H1V500M417.5 1H426.5M417.5 1V53L446.5 92.5H628.5V273H562M426.5 1H436V52L456 77H824.5V218M426.5 1V52L452.5 85H637V522.7H824.5V';
+
+  // Check the screen width to determine which d attribute to use
+  const screenWidth = window.innerWidth;
+  let dAttribute;
+
+  if (screenWidth >= 1280 && screenWidth < 1600) {
+    dAttribute = dAttribute1300to1600;
+  } else if (screenWidth >= 1600) {
+    dAttribute = dAttributeAbove1600;
+  } else {
+    dAttribute = dAttribute;
+  }
   // if (inViewport1) {
   //     console.log('in viewport:', ref.current);
   // }
@@ -30,7 +47,7 @@ const Tracks = () => {
         >
           <path
             className={inViewport2 ? 'track-path' : 'track-no-path'}
-            d='M407.5 1H412.5H417.5M407.5 1H398M407.5 1V53L375 98H217.5V550H296M398 1H389V52L369.5 80H1V218M398 1H426.5M417.5 1V53L446.5 92.5H628.5V273H562M426.5 1H436V52L456 77H824.5V218M426.5'
+            d={dAttribute} // Use the dynamically determined d attribute
             stroke='#FF009E'
             strokeWidth='1.5'
           />
@@ -40,6 +57,7 @@ const Tracks = () => {
       <div className='tracks_div'>
         <TracksCard name='WEB 3.0' />
         <TracksCard name='HEALTHCARE ' />
+        <TracksCard name='AI/ML ' />
         <TracksCard name='VIT CENTRIC ' />
         <TracksCard name='OPEN INNOVATION (SDGs)' />
       </div>
@@ -48,3 +66,6 @@ const Tracks = () => {
 };
 
 export default Tracks;
+
+// M407.5 1H412.5H417.5M407.5 1H398M407.5 1H389V52L369.5 80H1V218M398 1V52L372.5 88.5L207.5 89.5V622.5H1V600M417.5 1H426.5M417.5 1V53L446.5 92.5H628.5V273H562M426.5 1H436V52L456 77H824.5V218M426.5 1V52L452.5 85H637V622.7H824.5V
+// M407.5 1H412.5H417.5M407.5 1H398M407.5 1H389V52L369.5 80H1V218M398 1V52L372.5 88.5L207.5 89.5V522.5H1V500M417.5 1H426.5M417.5 1V53L446.5 92.5H628.5V273H562M426.5 1H436V52L456 77H824.5V218M426.5 1V52L452.5 85H637V522.7H824.5V
