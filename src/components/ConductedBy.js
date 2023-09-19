@@ -9,6 +9,7 @@ import LavieSports from '../assets/logos/LavieSport.png';
 import Wolfram from '../assets/logos/Wolfram.png';
 import axure from '../assets/logos/Axure.png';
 import spon from '../assets/logos/aaaaaa.png';
+import pizzahut from '../assets/logos/pizzaHut.png';
 import ieeecs from '../assets/logos/IEEECSlogo.png';
 import '../styles/ConductedBy/index.css';
 import Subheading from './ConductedBy/subheading';
@@ -103,8 +104,11 @@ export default function ConductedBy() {
         <div className='axure-logo mt-10 '>
           <img className='axure-logo-inner' src={axure} alt='Azure Logo' />
         </div>
-        <div className='spon-logo mb-16'>
+        <div className='spon-logo'>
           <img className='spon-logo-inner' src={spon} alt='Sponsor Logo' />
+        </div>
+        <div className='pizzahut-logo mb-16'>
+          <img className='pizzahut-logo-inner' src={pizzahut} alt='pizzaHut Logo' />
         </div>
       </div>
     </div>
